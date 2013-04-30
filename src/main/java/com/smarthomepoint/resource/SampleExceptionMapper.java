@@ -38,7 +38,7 @@ public class SampleExceptionMapper implements ExceptionMapper<Exception> {
 							.getMessage())).build();
 		} else {
 			return Response.status(500)
-					.entity(new ApiResponse(500, "something bad happened"))
+					.entity(new ApiResponse(500, "something bad happened :" + exception.getMessage() ))
 					.build();
 		}
 	}

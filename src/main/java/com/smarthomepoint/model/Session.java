@@ -1,4 +1,4 @@
-package org.persistence;
+package com.smarthomepoint.model;
 
 import javax.persistence.*;
 import com.smarthomepoint.model.User;

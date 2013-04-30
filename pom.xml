@@ -13,8 +13,6 @@
 	</properties>
 
 
-
-
 	<repositories>
 		<repository>
 			<id>EclipseLink</id>
@@ -100,12 +98,12 @@
 
 
 
-
-		<dependency>
+ 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
@@ -115,7 +113,6 @@
 
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -138,21 +135,25 @@
 					</filesets>
 				</configuration>
 			</plugin>
-					<plugin>
+
+			<plugin>
 				<groupId>com.vaadin</groupId>
 				<artifactId>vaadin-maven-plugin</artifactId>
 				<version>${vaadin.plugin.version}</version>
 				<configuration>
 					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
-					<!-- <runTarget>mobilemail</runTarget> -->
-					<!-- We are doing "inplace" but into subdir VAADIN/widgetsets. This 
-						way compatible with Vaadin eclipse plugin. -->
-					<webappDirectory>${basedir}/src/VAADIN/widgetsets
-					</webappDirectory>
-					<hostedWebapp>${basedir}/src/VAADIN/widgetsets
-					</hostedWebapp>
+<!-- 					<runTarget>mobilemail</runTarget>
+ -->					
+<!-- 					We are doing "inplace" but into subdir VAADIN/widgetsets. This 
+						way compatible with Vaadin eclipse plugin.
+						
+ -->	
+ 					<webappDirectory>${basedir}/src/main/webapp/VAADIN/widgetsets</webappDirectory>
+					<hostedWebapp>${basedir}/src/main/webapp/VAADIN/widgetsets</hostedWebapp>
 					<noServer>true</noServer>
-					<!-- Remove draftCompile when project is ready -->
+			
+<!-- 					Remove draftCompile when project is ready
+ -->			
 					<draftCompile>false</draftCompile>
 					<compileReport>true</compileReport>
 					<style>OBF</style>
@@ -162,10 +163,13 @@
 				<executions>
 					<execution>
 						<configuration>
-							<!-- if you don't specify any modules, the plugin will find them -->
-							<!-- <modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module> 
-								</modules> -->
-						</configuration>
+							
+<!-- 							if you don't specify any modules, the plugin will find them
+							
+							<modules> <module>com.vaadin.demo.mobilemail.gwt.ColorPickerWidgetSet</module> 
+								</modules>
+ -->
+ 						</configuration>
 						<goals>
 							<goal>resources</goal>
 							<goal>update-widgetset</goal>
@@ -174,13 +178,22 @@
 					</execution>
 				</executions>
 			</plugin>
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 				<configuration>
-					<webXml>${project.basedir}/WebContent/WEB-INF/web.xml</webXml>
+					<warName>ROOT</warName>
+
+<!--  				<outputDirectory>D:\apache-tomcat-7.0.35\webapps</outputDirectory>
+ -->
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
 			</plugin>
 
 		</plugins>
@@ -197,17 +210,12 @@
 								<pluginExecution>
 									<pluginExecutionFilter>
 										<groupId>com.vaadin</groupId>
-										<artifactId>
-											vaadin-maven-plugin
-										</artifactId>
-										<versionRange>
-											[7.0.5,)
-										</versionRange>
+										<artifactId>vaadin-maven-plugin</artifactId>
+										<versionRange>[7.0.5,)</versionRange>
 										<goals>
 											<goal>resources</goal>
-											<goal>
-												update-widgetset
-											</goal>
+											<goal>update-widgetset</goal>
+											<goal>compile</goal>
 										</goals>
 									</pluginExecutionFilter>
 									<action>

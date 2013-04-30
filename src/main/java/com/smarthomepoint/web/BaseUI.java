@@ -19,7 +19,7 @@ public class BaseUI extends UI {
 		Button button = new Button("Show API");
 		button.addClickListener(new Button.ClickListener() {
 			public void buttonClick(ClickEvent event) {
-				getCurrent().getPage().setLocation("api");
+				getCurrent().getPage().setLocation("apiview");
 				//layout.addComponent(new Label("Thank you for clicking"));
 			}
 		});
