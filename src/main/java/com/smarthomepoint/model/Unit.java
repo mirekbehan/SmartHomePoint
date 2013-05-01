@@ -1,72 +1,75 @@
 package com.smarthomepoint.model;
 
-import javax.persistence.MappedSuperclass;
-import javax.persistence.OneToOne;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
 
-import com.wordnik.swagger.annotations.ApiProperty;
-
-@MappedSuperclass
+@Entity
+@XmlRootElement(name = "Unit")
 public class Unit {
-	
-	
-	private String description;
-	private String status;
-	private String valueRange;
-	private String valueVolume;
-	private String valueType;
-	@OneToOne
-	private Category category;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	private String name;
+	@Embedded
+	private Location location;
+	@ManyToOne(targetEntity = Controller.class)
+	private List<Controller> controllers = new ArrayList<Controller>();
+	@OneToMany
+	@JoinColumn(name = "Unit_id", referencedColumnName = "id")
+	private List<Unit> units;
+	private String type;
+
 	public Unit() {
 	}
 
-	public String getValueRange() {
-		return valueRange;
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public List<Controller> getControllers() {
+		return controllers;
+	}
+	public void setControllers(List<Controller> controllers) {
+		this.controllers = controllers;
+	}
+	public List<Unit> getUnits() {
+		return units;
+	}
+	public void setUnits(List<Unit> param) {
+		this.units = param;
+	}
+	
+	
+	public void setType(String param) {
+		this.type = param;
+	}
+	public String getType() {
+		return type;
 	}
 
-	public void setValueRange(String valueRange) {
-		this.valueRange = valueRange;
-	}
-
-	public String getValueVolume() {
-		return valueVolume;
-	}
-
-	public void setValueVolume(String valueVolume) {
-		this.valueVolume = valueVolume;
-	}
-
-	public String getValueType() {
-		return valueType;
-	}
-
-	public void setValueType(String valueType) {
-		this.valueType = valueType;
-	}
-
-	public Category getCategory() {
-		return category;
-	}
-
-	public void setCategory(Category category) {
-		this.category = category;
-	}
-
-	public enum Status { planing, testing, available, warning, error; }
-	@ApiProperty(value = "status of sensor", allowableValues = "planing, testing, available, warning, error")
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
 }

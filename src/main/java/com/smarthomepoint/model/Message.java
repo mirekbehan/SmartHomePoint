@@ -25,7 +25,7 @@ public class Message {
 	@OneToOne
 	private User user;
 	@OneToOne
-	private HouseUnit houseUnit;
+	private Unit unit;
 	
 	public Message() {
 	}
@@ -62,12 +62,12 @@ public class Message {
 		this.user = user;
 	}
 
-	public HouseUnit getHouseUnit() {
-		return houseUnit;
+	public Unit getUnit() {
+		return unit;
 	}
 
-	public void setHouseUnit(HouseUnit room) {
-		this.houseUnit = room;
+	public void setUnit(Unit value) {
+		this.unit = value;
 	}
 
 

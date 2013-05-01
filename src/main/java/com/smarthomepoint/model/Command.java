@@ -31,7 +31,7 @@ public class Command {
 	private User user;
     private boolean complete;
 	@OneToOne
-	private HouseUnit houseUnit;
+	private Unit unit;
 
     public Command() {
 	}
@@ -109,12 +109,12 @@ public class Command {
 		this.user = user;
 	}
 
-	public HouseUnit getHouseUnit() {
-	    return houseUnit;
+	public Unit getUnit() {
+	    return unit;
 	}
 
-	public void setHouseUnit(HouseUnit param) {
-	    this.houseUnit = param;
+	public void setUnit(Unit param) {
+	    this.unit = param;
 	}
 
 

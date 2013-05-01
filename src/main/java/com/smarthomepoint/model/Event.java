@@ -27,7 +27,7 @@ public class Event {
 	private Long timestamp;
 	private String status;
 	@OneToOne
-	private HouseUnit houseUnit;
+	private Unit unit;
 
     public Event() {
 	}
@@ -84,12 +84,12 @@ public class Event {
 		this.timestamp = timestamp;
 	}
 
-	public HouseUnit getHouseUnit() {
-	    return houseUnit;
+	public Unit getUnit() {
+	    return unit;
 	}
 
-	public void setHouseUnit(HouseUnit param) {
-	    this.houseUnit = param;
+	public void setUnit(Unit param) {
+	    this.unit = param;
 	}
 
 

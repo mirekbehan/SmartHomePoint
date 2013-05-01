@@ -1,18 +1,13 @@
 package com.smarthomepoint.logic;
 
-import com.google.gwt.user.client.rpc.core.java.util.Collections;
 import com.smarthomepoint.model.*;
 
 import java.util.List;
-import java.util.ArrayList;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import org.h2.engine.User;
-
-import scala.actors.threadpool.Arrays;
 
 public class HouseResolver {
 
@@ -75,7 +70,7 @@ public class HouseResolver {
 	
 	}
 	
-	static public void addRoom(HouseUnit room) {
+	static public void addRoom(Unit room) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(room);
@@ -83,15 +78,15 @@ public class HouseResolver {
 		em.close();
 	}
 
-	static public HouseUnit findRoomById(long id) {
+	static public Unit findRoomById(long id) {
 		EntityManager em = emf.createEntityManager();
-		HouseUnit value = em.find(HouseUnit.class, id);
+		Unit value = em.find(Unit.class, id);
 		em.close();
 		return value;
 	}
-	static public List<HouseUnit> findAllRooms() {
+	static public List<Unit> findAllRooms() {
 		EntityManager em = emf.createEntityManager();
-		List<HouseUnit> value = em.createQuery("SELECT o FROM HouseUnit o WHERE o.type='room'", HouseUnit.class)
+		List<Unit> value = em.createQuery("SELECT o FROM HouseUnit o WHERE o.type='room'", Unit.class)
 				.getResultList();
 		em.close();
 		return value;
@@ -133,7 +128,7 @@ public class HouseResolver {
 		em.getTransaction().commit();
 		em.close();
 	}
-	static public void updateRoom(HouseUnit value) {
+	static public void updateRoom(Unit value) {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		em.merge(value);
@@ -273,12 +268,12 @@ public class HouseResolver {
 		return value;
 	}
 	
-	static private HouseUnit createHouseUnit(long id, String name, List<Controller> controllers, Location location) {
+	static private Unit createUnit(long id, String name, List<Controller> controllers, Location location) {
 	
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 
-		HouseUnit value = new HouseUnit();
+		Unit value = new Unit();
 		value.setId(id);
 		value.setName(name);
 		value.setControllers(controllers);

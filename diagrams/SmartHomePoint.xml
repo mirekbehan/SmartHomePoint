@@ -44,7 +44,7 @@
 	</entity>
 
 	<entity>
-		<entity-name>com.smarthomepoint.model.HouseUnit</entity-name>
+		<entity-name>com.smarthomepoint.model.Unit</entity-name>
 		<entity-width>120</entity-width>
 		<entity-height>206</entity-height>
 		<entity-X-Coordinate>351</entity-X-Coordinate>

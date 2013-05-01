@@ -5,7 +5,7 @@ import java.util.List;
 import com.wordnik.swagger.annotations.*;
 import com.smarthomepoint.logic.HouseResolver;
 import com.smarthomepoint.model.Element;
-import com.smarthomepoint.model.HouseUnit;
+import com.smarthomepoint.model.Unit;
 import com.smarthomepoint.exception.NotFoundException;
 
 import javax.ws.rs.core.Response;

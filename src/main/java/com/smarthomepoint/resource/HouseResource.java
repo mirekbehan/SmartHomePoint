@@ -6,7 +6,7 @@ import com.wordnik.swagger.annotations.*;
 import com.smarthomepoint.logic.HouseResolver;
 import com.smarthomepoint.model.Controller;
 import com.smarthomepoint.model.Element;
-import com.smarthomepoint.model.HouseUnit;
+import com.smarthomepoint.model.Unit;
 import com.smarthomepoint.exception.NotFoundException;
 
 import javax.ws.rs.core.Response;
@@ -23,24 +23,24 @@ public class HouseResource {
 	@GET
 	@Path("/room")
 	@ApiOperation(value = "Find all rooms in house", notes = "All rooms in the house. "
-			+ "Other values will generated exceptions", responseClass = "com.smarthomepoint.model.Room")
-		@ApiErrors(value = { @ApiError(code = 404, reason = "Room not found") })
-	public Response getRooms() throws NotFoundException {
-		List<HouseUnit> rooms = HouseResolver.findAllRooms();
-		if (null != rooms) {
-			return Response.ok().entity(rooms).build();
+			+ "Other values will generated exceptions", responseClass = "com.smarthomepoint.model.Unit")
+		@ApiErrors(value = { @ApiError(code = 404, reason = "Units not found") })
+	public Response getUnits() throws NotFoundException {
+		List<Unit> values = HouseResolver.findAllRooms();
+		if (null != values) {
+			return Response.ok().entity(values).build();
 		} else {
-			throw new NotFoundException(404, "Room not found");
+			throw new NotFoundException(404, "Units not found");
 		}
 	}
 	
 
 	@POST
-	@Path("/room")
-	@ApiOperation(value = "Create new room at house", responseClass = "com.smarthomepoint.model.Room")
-	@ApiErrors({ @ApiError(code = 400, reason = "Invalid Room") })
+	@Path("/house")
+	@ApiOperation(value = "Create new room at house", responseClass = "com.smarthomepoint.model.Unit")
+	@ApiErrors({ @ApiError(code = 400, reason = "Invalid Unit") })
 	public Response createRoom(
-			@ApiParam(value = "room to add into house schema", required = true) HouseUnit value) {
+			@ApiParam(value = "room to add into house", required = true) Unit value) {
 		HouseResolver.addRoom(value);
 		return Response.ok().entity("").build();
 	}
@@ -48,14 +48,14 @@ public class HouseResource {
 	@GET
 	@Path("/room/{id}")
 	@ApiOperation(value = "Find room by ID", notes = "For valid response try integer IDs in range <1;255>. "
-			+ "Other values will generated exceptions", responseClass = "com.smarthomepoint.model.Room")
+			+ "Other values will generated exceptions", responseClass = "com.smarthomepoint.model.Unit")
 	@ApiErrors(value = { @ApiError(code = 400, reason = "Invalid ID supplied"),
 			@ApiError(code = 404, reason = "Room not found") })
 	public Response getRoomById(
 			@ApiParam(value = "ID of room that needs to be fetched", allowableValues = "range[1,255]", required = true) 
 			@PathParam("id") String id)
 			throws NotFoundException {
-		HouseUnit order = HouseResolver.findRoomById(ru.getLong(0, 255, 0, id));
+		Unit order = HouseResolver.findRoomById(ru.getLong(0, 255, 0, id));
 		if (null != order) {
 			return Response.ok().entity(order).build();
 		} else {
