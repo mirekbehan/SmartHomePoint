@@ -18,3 +18,7 @@ mvn -Djetty.port=9999 jetty:run
 web browser >
 
 http://localhost:9999
+
+
+
+Web site : http://mirekbehan.github.io/SmartHomePoint/
