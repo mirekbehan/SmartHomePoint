@@ -1,29 +1,27 @@
 package com.smarthomepoint.model;
 
-import com.wordnik.swagger.annotations.*;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.wordnik.swagger.annotations.ApiProperty;
 
 @Entity
-@NamedQueries( {
-	@NamedQuery(name = "findUserByKeyword",  query = "SELECT o  FROM User o  WHERE o.username LIKE :value OR o.firstName LIKE :value OR o.lastName LIKE :value"),
-	@NamedQuery(name = "findUserByUsername",  query = "SELECT o  FROM User o  WHERE o.username =:value"),
-	@NamedQuery(name = "findUserById",  query = "SELECT o  FROM User o   WHERE o.id = :value"),
-	@NamedQuery(name = "findAll",  query = "SELECT o  FROM User o "),
-})
-
-
+@NamedQueries({
+		@NamedQuery(name = "findUserByKeyword", query = "SELECT o  FROM User o  WHERE o.username LIKE :value OR o.firstName LIKE :value OR o.lastName LIKE :value"),
+		@NamedQuery(name = "findUserByUsername", query = "SELECT o  FROM User o  WHERE o.username =:value"),
+		@NamedQuery(name = "findUserById", query = "SELECT o  FROM User o   WHERE o.id = :value"),
+		@NamedQuery(name = "findAll", query = "SELECT o  FROM User o "), })
 @XmlRootElement(name = "User")
 public class User {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String username;
 	private String firstName;
@@ -35,10 +33,9 @@ public class User {
 	private int userStatus;
 	private int userRole;
 
-	
 	public User() {
 	}
-	
+
 	@XmlElement(name = "id")
 	public long getId() {
 		return id;
