@@ -128,6 +128,11 @@
 			<scope>compile</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.5</version>
+		</dependency>
 
 		<dependency>
 			<groupId>javax</groupId>
@@ -206,7 +211,6 @@
 				<version>2.3</version>
 				<configuration>
 					<warName>ROOT</warName>
-					<packagingExcludes>WEB-INF/lib/slf4j*.jar</packagingExcludes>
 				</configuration>
 			</plugin>
 
