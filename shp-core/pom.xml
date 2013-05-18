@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
   	<parent>
     	<groupId>com.smarthomepoint</groupId>
-    	<artifactId>shp-base</artifactId>
+    	<artifactId>shp</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
   	</parent>
   	<artifactId>shp-core</artifactId>

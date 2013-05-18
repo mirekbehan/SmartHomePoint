@@ -1,5 +1,5 @@
 .classpath
-target
+.project
 .settings
-src/main/webapp/VAADIN
-/bin
+target
+VAADIN
