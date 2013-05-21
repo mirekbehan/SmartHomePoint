@@ -6,6 +6,7 @@ import com.smarthomepoint.logic.HouseResolver;
 import com.smarthomepoint.model.Command;
 import com.smarthomepoint.model.Sensor;
 import com.smarthomepoint.model.User;
+import com.smarthomepoint.util.JavaRestResourceUtil;
 import com.smarthomepoint.exception.NotFoundException;
 
 import javax.ws.rs.core.Response;

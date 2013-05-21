@@ -1,9 +1,8 @@
-package com.smarthomepoint.resource;
+package com.smarthomepoint.util;
 
 import com.smarthomepoint.exception.ApiException;
 import com.smarthomepoint.exception.BadRequestException;
 import com.smarthomepoint.exception.NotFoundException;
-import com.smarthomepoint.model.ApiResponse;
 
 import javax.ws.rs.ext.*;
 import javax.ws.rs.core.Response;

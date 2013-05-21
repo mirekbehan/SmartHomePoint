@@ -1,4 +1,4 @@
-package com.smarthomepoint.resource;
+package com.smarthomepoint.util;
 
 import java.text.SimpleDateFormat;
 

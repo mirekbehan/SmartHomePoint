@@ -1,4 +1,4 @@
-package com.smarthomepoint.model;
+package com.smarthomepoint.util;
 
 import javax.xml.bind.annotation.XmlTransient;
 
