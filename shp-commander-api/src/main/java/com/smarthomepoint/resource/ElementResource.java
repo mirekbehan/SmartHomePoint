@@ -2,14 +2,23 @@ package com.smarthomepoint.resource;
 
 import java.util.List;
 
-import com.wordnik.swagger.annotations.*;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Response;
+
+import com.smarthomepoint.exception.NotFoundException;
 import com.smarthomepoint.logic.HouseResolver;
 import com.smarthomepoint.model.Element;
-import com.smarthomepoint.model.Unit;
-import com.smarthomepoint.exception.NotFoundException;
-
-import javax.ws.rs.core.Response;
-import javax.ws.rs.*;
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiError;
+import com.wordnik.swagger.annotations.ApiErrors;
+import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiParam;
 
 
 @Path("/element.json")
@@ -70,7 +79,7 @@ public class ElementResource {
 			@ApiError(code = 404, reason = "element not found") })
 	public Response updateElement(
 			@ApiParam(value = "ID of the element that needs to be deleted", allowableValues = "range[1,255]", required = true) 
-			@PathParam("orderId") String id) {
+			@PathParam("id") String id) {
 		
 		//HouseResolver.removeElementById(ru.getLong(0, 255, 0, id));
 		
@@ -84,9 +93,9 @@ public class ElementResource {
 			+ "Anything above 255 or nonintegers will generate API errors")
 	@ApiErrors(value = { @ApiError(code = 400, reason = "Invalid ID supplied"),
 			@ApiError(code = 404, reason = "element not found") })
-	public Response deleteelement(
+	 public Response deleteelement(
 			@ApiParam(value = "ID of the element that needs to be deleted", allowableValues = "range[1,255]", required = true) 
-			@PathParam("orderId") String id) {
+			@PathParam("id") String id) {
 		
 //		HouseResolver.removeElementById(ru.getLong(0, 255, 0, id));
 		

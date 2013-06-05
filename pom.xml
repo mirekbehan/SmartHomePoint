@@ -16,27 +16,31 @@
 		</developer>
 	</developers>
 	<url>http://smarthomepoint.com</url>
-	<issueManagement><system>GitHub</system><url>https://github.com/mirekbehan/SmartHomePoint/issues</url></issueManagement>
-	<scm>
-		<connection>scm:git:github.com/mirekbehan/SmartHomePoint.git</connection>
-		<url>https://github.com/mirekbehan/SmartHomePoint</url>
-	</scm>
-	<mailingLists><mailingList><subscribe>mirek.behan@gmail.com</subscribe></mailingList></mailingLists>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/mirekbehan/SmartHomePoint/issues</url>
+	</issueManagement>
+	<mailingLists>
+		<mailingList>
+			<subscribe>mirek.behan@gmail.com</subscribe>
+		</mailingList>
+	</mailingLists>
 
 	<modules>
-	    <module>shp-core</module>
-	    <module>shp-website</module>
-	</modules>
+<!-- 	    <module>shp-cloud</module>
+	    <module>shp-controller-arduino</module>
+ -->
+	    <module>shp-commander-api</module>
+	    <module>shp-commander-apiview</module>
+<!-- 	    <module>shp-client-android</module>
+	    <module>shp-client-ios</module>
+	    <module>shp-client-javafx</module>
+	    <module>shp-client-vaadin</module>
+	    <module>shp-client-wp</module>
+ -->
+ 	    <module>shp-website</module>
 	
-<!-- 	<modules>
-	    <module>shp-node</module>
-	    <module>shp-commander</module>
-	    <module>shp-controller-web</module>
-	    <module>shp-controller-android</module>
-	    <module>shp-controller-ios</module>
-	    <module>shp-controller-wphone</module>
 	</modules>
- -->	
 	
 	<distributionManagement>
     	<repository>
@@ -46,86 +50,14 @@
     	</repository>
 	</distributionManagement>
 
-
-	<repositories>
-		<repository>
-			<id>EclipseLink</id>
-			<url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
-		</repository>
-		<repository>
-			<id>vaadin-addons</id>
-			<url>http://maven.vaadin.com/vaadin-addons</url>
-		</repository>
-		<repository>
-			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
-
-	<pluginRepositories>
-		<pluginRepository>
-			<id>vaadin-snapshots</id>
-			<url>http://oss.sonatype.org/content/repositories/vaadin-snapshots/</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</pluginRepository>
-	</pluginRepositories>
-
-	<build>
-	<plugins>
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>downloads-maven-plugin</artifactId>
-				<version>0.6</version>
-				<configuration>
-					<description>Official ${project.name} build of the ${project.version} release</description>
-					<override>true</override>
-					<includeAttached>true</includeAttached>
-					<server>github</server>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>upload</goal>
-						</goals>
-						<phase>install</phase>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.7</version>
-				<configuration>
-					<message>Building site for ${project.version}</message>
-					<server>github</server>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
-			</plugin>
- 
+<!-- <build>
+<plugins>
   			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>3.0</version>
 				<configuration>
+					<outputDirectory>${project.basedir}/webapps/development</outputDirectory>
 					<reportPlugins>
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
@@ -154,34 +86,9 @@
 					</reportPlugins>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-
-
-	</build>
-
+</plugins>
+</build>
+ -->
 
 	
 </project>
