@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+  	<parent>
+    	<groupId>com.smarthomepoint</groupId>
+    	<artifactId>shp</artifactId>
+    	<version>0.0.1-SNAPSHOT</version>
+  	</parent>
+  	<artifactId>shp-controller-arduino</artifactId>
+
+
+  		
+  		<developers>
+  		    <developer>
+  		        <name>Kosina Michal</name>
+  		        <email>michal.kosina@uhk.cz</email>
+  		      	<organization>uhk.cz</organization>  
+  		      </developer>
+  		</developers>
+  		
+
+
+</project>
