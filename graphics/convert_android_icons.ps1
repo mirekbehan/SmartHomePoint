@@ -1,5 +1,11 @@
 ﻿#Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined
 
+Remove-Item ..\shp-client-android\res\drawable-ldpi\* -recurse
+Remove-Item ..\shp-client-android\res\drawable-mdpi\* -recurse
+Remove-Item ..\shp-client-android\res\drawable-hdpi\* -recurse
+Remove-Item ..\shp-client-android\res\drawable-xhdpi\* -recurse
+Remove-Item ..\shp-client-android\res\drawable-xxhdpi\* -recurse
+
     $fileDirectory = [IO.Directory]::GetFiles(".\icons"); 
     foreach($fileName in Get-ChildItem $fileDirectory) { 
         Write-Host "Exporting file ... ($fileName)";
