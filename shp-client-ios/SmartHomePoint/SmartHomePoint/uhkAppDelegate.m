@@ -8,11 +8,33 @@
 
 #import "uhkAppDelegate.h"
 
+
 @implementation uhkAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // load user settings
+    NSString* path = [self getDataFile];
+    BOOL firstTimeLaunch = ![[NSFileManager defaultManager] fileExistsAtPath:path];
+    if (!firstTimeLaunch) {
+        //NSArray *values = [[NSArray alloc] initWithContentsOfFile:path];
+    }
+    
+    // select storyboard and initial viewController
+    UIStoryboard *storyBoard = nil;
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        if (firstTimeLaunch)
+            storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPad" bundle:nil];
+    }else{
+        //CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+        //if (iOSDeviceScreenSize.height == 480) or if (iOSDeviceScreenSize.height == 568)
+        storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPhone" bundle:nil];
+    }
+
+    if (storyBoard!=NULL) {
+        UIViewController * controller = [storyBoard instantiateInitialViewController];
+        self.window.rootViewController = controller;
+    }
     return YES;
 }
 							
@@ -42,5 +64,13 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (NSString*) getDataFile
+{
+    NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [[path objectAtIndex:0] stringByAppendingPathComponent:@"savefile.plist"];
+}
+
+
 
 @end
