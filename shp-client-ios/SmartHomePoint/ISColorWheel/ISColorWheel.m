@@ -142,7 +142,6 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
         
         ISColorKnob* knob = [[ISColorKnob alloc] init];
         self.knobView = knob;
-        [knob release];
         
         self.backgroundColor = [UIColor clearColor];
         
@@ -165,7 +164,6 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
     }
     
     self.knobView = nil;
-    [super dealloc];
 }
 
 
@@ -311,14 +309,12 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
     if (_knobView)
     {
         [_knobView removeFromSuperview];
-        [_knobView release];
     }
     
     _knobView = knobView;
     
     if (_knobView)
     {
-        [_knobView retain];
         [self addSubview:_knobView];
     }
     
