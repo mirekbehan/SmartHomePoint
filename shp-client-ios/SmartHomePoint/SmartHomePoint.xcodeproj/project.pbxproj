@@ -50,6 +50,7 @@
 		29853FAF17ACFEBD00129662 /* UGHTTPHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853F9617ACFEBD00129662 /* UGHTTPHelpers.m */; };
 		29853FB017ACFEBD00129662 /* UGHTTPResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853F9817ACFEBD00129662 /* UGHTTPResult.m */; };
 		29853FB217ACFF8700129662 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29853FB117ACFF8700129662 /* Security.framework */; };
+		29853FBA17AD0C6300129662 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853FB917AD0C6300129662 /* ISColorWheel.m */; };
 		299496E517A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299496E417A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard */; };
 		29C74CA61795DDD80092708D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA51795DDD80092708D /* UIKit.framework */; };
 		29C74CA81795DDD80092708D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA71795DDD80092708D /* Foundation.framework */; };
@@ -166,6 +167,8 @@
 		29853F9717ACFEBD00129662 /* UGHTTPResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UGHTTPResult.h; sourceTree = "<group>"; };
 		29853F9817ACFEBD00129662 /* UGHTTPResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UGHTTPResult.m; sourceTree = "<group>"; };
 		29853FB117ACFF8700129662 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		29853FB817AD0C6300129662 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
+		29853FB917AD0C6300129662 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		299496E417A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SettingsStoryboard_iPad.storyboard; path = Storyboards/SettingsStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		29C74CA21795DDD80092708D /* SmartHomePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C74CA51795DDD80092708D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -387,9 +390,19 @@
 			path = v2;
 			sourceTree = "<group>";
 		};
+		29853FB717AD0C6300129662 /* ISColorWheel */ = {
+			isa = PBXGroup;
+			children = (
+				29853FB817AD0C6300129662 /* ISColorWheel.h */,
+				29853FB917AD0C6300129662 /* ISColorWheel.m */,
+			);
+			path = ISColorWheel;
+			sourceTree = "<group>";
+		};
 		29C74C991795DDD80092708D = {
 			isa = PBXGroup;
 			children = (
+				29853FB717AD0C6300129662 /* ISColorWheel */,
 				29853F6417ACFEBD00129662 /* UGAPI */,
 				29836F84179A883C005FA48C /* ZBarSDK */,
 				29C74CAB1795DDD80092708D /* SmartHomePoint */,
@@ -626,6 +639,7 @@
 				29853FAE17ACFEBD00129662 /* UGHTTPClient.m in Sources */,
 				29853FAF17ACFEBD00129662 /* UGHTTPHelpers.m in Sources */,
 				29853FB017ACFEBD00129662 /* UGHTTPResult.m in Sources */,
+				29853FBA17AD0C6300129662 /* ISColorWheel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
