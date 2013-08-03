@@ -13,7 +13,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // load user settings
+    // system settings
+    NSString *resetTokenKey = @"reset_token";
+    NSString *displayKey = @"disp";
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults==NULL)
+        NSAssert(false, @"The settings does not exists!");
+    BOOL resetToken = (BOOL)[defaults valueForKey:resetTokenKey];
+    if (resetToken)
+        [defaults setObject:NO forKey:resetTokenKey];
+    NSNumber *display = [defaults valueForKey:@"disp"];
+
+    // user settings and data
     NSString* path = [self getDataFile];
     BOOL firstTimeLaunch = ![[NSFileManager defaultManager] fileExistsAtPath:path];
     if (!firstTimeLaunch) {
@@ -23,12 +34,33 @@
     // select storyboard and initial viewController
     UIStoryboard *storyBoard = nil;
     if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        if (firstTimeLaunch)
+        if (resetToken || firstTimeLaunch) {
             storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPad" bundle:nil];
+        }
+        else {
+            switch (display.intValue) {
+                case 0: // Table layout
+                default:
+                    break;
+                case 1:
+                    break;
+            }
+        }
     }else{
         //CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
         //if (iOSDeviceScreenSize.height == 480) or if (iOSDeviceScreenSize.height == 568)
-        storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPhone" bundle:nil];
+        if (resetToken || firstTimeLaunch) {
+            storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPhone" bundle:nil];
+        }
+        else {
+            switch (display.intValue) {
+                case 0: // Table layout
+                default:
+                    break;
+                case 1:
+                    break;
+            }
+        }        
     }
 
     if (storyBoard!=NULL) {
@@ -52,6 +84,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    // Possibly check the reset token
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
