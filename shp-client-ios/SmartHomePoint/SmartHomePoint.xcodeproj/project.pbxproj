@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		291B7DAC17EF8E4A008FFCF4 /* SettingsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F94A2A17EF8B2100BFEE9D /* SettingsStoryboard_iPhone.storyboard */; };
 		29836F7B179A8786005FA48C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29836F7A179A8786005FA48C /* AVFoundation.framework */; };
 		29836F7D179A879D005FA48C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29836F7C179A879D005FA48C /* CoreMedia.framework */; };
 		29836F7F179A87A8005FA48C /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29836F7E179A87A8005FA48C /* CoreVideo.framework */; };
@@ -23,7 +24,6 @@
 		29836FAA179A883C005FA48C /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 29836FA1179A883C005FA48C /* zbar-samples.png */; };
 		29836FAB179A883C005FA48C /* zbar-samples.png in Resources */ = {isa = PBXBuildFile; fileRef = 29836FA1179A883C005FA48C /* zbar-samples.png */; };
 		29836FB8179ABBA0005FA48C /* settingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29836FB7179ABBA0005FA48C /* settingsViewController.m */; };
-		29836FBB179ABC14005FA48C /* SettingsStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29836FBA179ABC14005FA48C /* SettingsStoryboard_iPhone.storyboard */; };
 		29836FBD179B2539005FA48C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29836FBC179B2539005FA48C /* Settings.bundle */; };
 		29853F9917ACFEBD00129662 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853F6717ACFEBD00129662 /* NSObject+SBJson.m */; };
 		29853F9A17ACFEBD00129662 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853F6A17ACFEBD00129662 /* SBJsonParser.m */; };
@@ -51,7 +51,6 @@
 		29853FB017ACFEBD00129662 /* UGHTTPResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853F9817ACFEBD00129662 /* UGHTTPResult.m */; };
 		29853FB217ACFF8700129662 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29853FB117ACFF8700129662 /* Security.framework */; };
 		29853FBA17AD0C6300129662 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853FB917AD0C6300129662 /* ISColorWheel.m */; };
-		299496E517A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 299496E417A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard */; };
 		29C74CA61795DDD80092708D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA51795DDD80092708D /* UIKit.framework */; };
 		29C74CA81795DDD80092708D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA71795DDD80092708D /* Foundation.framework */; };
 		29C74CAA1795DDD80092708D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA91795DDD80092708D /* CoreGraphics.framework */; };
@@ -69,6 +68,14 @@
 		29C74CCF1795DDD90092708D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA71795DDD80092708D /* Foundation.framework */; };
 		29C74CD71795DDD90092708D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29C74CD51795DDD90092708D /* InfoPlist.strings */; };
 		29C74CDA1795DDD90092708D /* SmartHomePointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C74CD91795DDD90092708D /* SmartHomePointTests.m */; };
+		29F94A0B17EF0A7500BFEE9D /* AreasViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F94A0A17EF0A7500BFEE9D /* AreasViewController_iPhone.m */; };
+		29F94A0E17EF113400BFEE9D /* AppliancesViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F94A0D17EF113400BFEE9D /* AppliancesViewController_iPhone.m */; };
+		29F94A1117EF7EC400BFEE9D /* AreasDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F94A1017EF7EC400BFEE9D /* AreasDetailViewController.m */; };
+		29F94A1517EF82AE00BFEE9D /* LightDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29F94A1417EF82AE00BFEE9D /* LightDetailViewController.m */; };
+		29F94A1C17EF89F100BFEE9D /* TableLayoutStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F94A1E17EF89F100BFEE9D /* TableLayoutStoryboard_iPhone.storyboard */; };
+		29F94A2017EF8A3300BFEE9D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29F94A2217EF8A3300BFEE9D /* Localizable.strings */; };
+		29F94A2417EF8B1400BFEE9D /* TableLayoutStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F94A2617EF8B1400BFEE9D /* TableLayoutStoryboard_iPad.storyboard */; };
+		29F94A2C17EF8B2B00BFEE9D /* SettingsStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29F94A2E17EF8B2B00BFEE9D /* SettingsStoryboard_iPad.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +121,6 @@
 		29836FA1179A883C005FA48C /* zbar-samples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zbar-samples.png"; sourceTree = "<group>"; };
 		29836FB6179ABBA0005FA48C /* settingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = settingsViewController.h; path = Controllers/Settings/settingsViewController.h; sourceTree = "<group>"; };
 		29836FB7179ABBA0005FA48C /* settingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = settingsViewController.m; path = Controllers/Settings/settingsViewController.m; sourceTree = "<group>"; };
-		29836FBA179ABC14005FA48C /* SettingsStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SettingsStoryboard_iPhone.storyboard; path = Storyboards/SettingsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		29836FBC179B2539005FA48C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		29853F6617ACFEBD00129662 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		29853F6717ACFEBD00129662 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
@@ -169,7 +175,6 @@
 		29853FB117ACFF8700129662 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29853FB817AD0C6300129662 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		29853FB917AD0C6300129662 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
-		299496E417A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SettingsStoryboard_iPad.storyboard; path = Storyboards/SettingsStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		29C74CA21795DDD80092708D /* SmartHomePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C74CA51795DDD80092708D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29C74CA71795DDD80092708D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,6 +198,28 @@
 		29C74CD61795DDD90092708D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29C74CD81795DDD90092708D /* SmartHomePointTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartHomePointTests.h; sourceTree = "<group>"; };
 		29C74CD91795DDD90092708D /* SmartHomePointTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomePointTests.m; sourceTree = "<group>"; };
+		29F94A0917EF0A7500BFEE9D /* AreasViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AreasViewController_iPhone.h; path = Controllers/TableLayout/AreasViewController_iPhone.h; sourceTree = "<group>"; };
+		29F94A0A17EF0A7500BFEE9D /* AreasViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AreasViewController_iPhone.m; path = Controllers/TableLayout/AreasViewController_iPhone.m; sourceTree = "<group>"; };
+		29F94A0C17EF113400BFEE9D /* AppliancesViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppliancesViewController_iPhone.h; path = Controllers/TableLayout/AppliancesViewController_iPhone.h; sourceTree = "<group>"; };
+		29F94A0D17EF113400BFEE9D /* AppliancesViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppliancesViewController_iPhone.m; path = Controllers/TableLayout/AppliancesViewController_iPhone.m; sourceTree = "<group>"; };
+		29F94A0F17EF7EC400BFEE9D /* AreasDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AreasDetailViewController.h; path = Controllers/TableLayout/AreasDetailViewController.h; sourceTree = "<group>"; };
+		29F94A1017EF7EC400BFEE9D /* AreasDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AreasDetailViewController.m; path = Controllers/TableLayout/AreasDetailViewController.m; sourceTree = "<group>"; };
+		29F94A1317EF82AE00BFEE9D /* LightDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightDetailViewController.h; path = Controllers/Shared/LightDetailViewController.h; sourceTree = "<group>"; };
+		29F94A1417EF82AE00BFEE9D /* LightDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LightDetailViewController.m; path = Controllers/Shared/LightDetailViewController.m; sourceTree = "<group>"; };
+		29F94A1817EF894300BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = cs; path = cs.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		29F94A1917EF894300BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = cs; path = cs.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		29F94A1A17EF894300BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29F94A1B17EF894300BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29F94A1D17EF89F100BFEE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/TableLayoutStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		29F94A1F17EF8A0200BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = cs; path = cs.lproj/TableLayoutStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		29F94A2117EF8A3300BFEE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		29F94A2317EF8A3800BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		29F94A2517EF8B1400BFEE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/TableLayoutStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		29F94A2717EF8B1800BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = cs; path = cs.lproj/TableLayoutStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		29F94A2917EF8B2100BFEE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/SettingsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		29F94A2B17EF8B2500BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = cs; path = cs.lproj/SettingsStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		29F94A2D17EF8B2B00BFEE9D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/SettingsStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		29F94A2F17EF8B2E00BFEE9D /* cs */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = cs; path = cs.lproj/SettingsStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +321,9 @@
 		29836FB4179ABA04005FA48C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				29F94A1217EF823D00BFEE9D /* Shared */,
+				29F94A0817EF07D100BFEE9D /* TableLayout */,
+				29BB01AB17BD7767005311B8 /* Layouts */,
 				29836FB5179ABA15005FA48C /* Settings */,
 			);
 			name = Controllers;
@@ -311,8 +341,10 @@
 		29836FB9179ABBA8005FA48C /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				29836FBA179ABC14005FA48C /* SettingsStoryboard_iPhone.storyboard */,
-				299496E417A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard */,
+				29F94A2A17EF8B2100BFEE9D /* SettingsStoryboard_iPhone.storyboard */,
+				29F94A2E17EF8B2B00BFEE9D /* SettingsStoryboard_iPad.storyboard */,
+				29F94A1E17EF89F100BFEE9D /* TableLayoutStoryboard_iPhone.storyboard */,
+				29F94A2617EF8B1400BFEE9D /* TableLayoutStoryboard_iPad.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -399,6 +431,13 @@
 			path = ISColorWheel;
 			sourceTree = "<group>";
 		};
+		29BB01AB17BD7767005311B8 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Layouts;
+			sourceTree = "<group>";
+		};
 		29C74C991795DDD80092708D = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +504,7 @@
 				29C74CB71795DDD80092708D /* Default.png */,
 				29C74CB91795DDD80092708D /* Default@2x.png */,
 				29C74CBB1795DDD80092708D /* Default-568h@2x.png */,
+				29F94A2217EF8A3300BFEE9D /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -486,6 +526,28 @@
 				29C74CD51795DDD90092708D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29F94A0817EF07D100BFEE9D /* TableLayout */ = {
+			isa = PBXGroup;
+			children = (
+				29F94A0917EF0A7500BFEE9D /* AreasViewController_iPhone.h */,
+				29F94A0A17EF0A7500BFEE9D /* AreasViewController_iPhone.m */,
+				29F94A0F17EF7EC400BFEE9D /* AreasDetailViewController.h */,
+				29F94A1017EF7EC400BFEE9D /* AreasDetailViewController.m */,
+				29F94A0C17EF113400BFEE9D /* AppliancesViewController_iPhone.h */,
+				29F94A0D17EF113400BFEE9D /* AppliancesViewController_iPhone.m */,
+			);
+			name = TableLayout;
+			sourceTree = "<group>";
+		};
+		29F94A1217EF823D00BFEE9D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				29F94A1317EF82AE00BFEE9D /* LightDetailViewController.h */,
+				29F94A1417EF82AE00BFEE9D /* LightDetailViewController.m */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -543,6 +605,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				cs,
 			);
 			mainGroup = 29C74C991795DDD80092708D;
 			productRefGroup = 29C74CA31795DDD80092708D /* Products */;
@@ -560,6 +623,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				291B7DAC17EF8E4A008FFCF4 /* SettingsStoryboard_iPhone.storyboard in Resources */,
 				29C74CB01795DDD80092708D /* InfoPlist.strings in Resources */,
 				29C74CB81795DDD80092708D /* Default.png in Resources */,
 				29C74CBA1795DDD80092708D /* Default@2x.png in Resources */,
@@ -570,9 +634,11 @@
 				29836FA6179A883C005FA48C /* zbar-help.html in Resources */,
 				29836FA8179A883C005FA48C /* zbar-helpicons.png in Resources */,
 				29836FAA179A883C005FA48C /* zbar-samples.png in Resources */,
-				29836FBB179ABC14005FA48C /* SettingsStoryboard_iPhone.storyboard in Resources */,
 				29836FBD179B2539005FA48C /* Settings.bundle in Resources */,
-				299496E517A06BCB001B9068 /* SettingsStoryboard_iPad.storyboard in Resources */,
+				29F94A2C17EF8B2B00BFEE9D /* SettingsStoryboard_iPad.storyboard in Resources */,
+				29F94A2017EF8A3300BFEE9D /* Localizable.strings in Resources */,
+				29F94A2417EF8B1400BFEE9D /* TableLayoutStoryboard_iPad.storyboard in Resources */,
+				29F94A1C17EF89F100BFEE9D /* TableLayoutStoryboard_iPhone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +689,7 @@
 				29853F9E17ACFEBD00129662 /* SBJsonStreamParserState.m in Sources */,
 				29853F9F17ACFEBD00129662 /* SBJsonStreamWriter.m in Sources */,
 				29853FA017ACFEBD00129662 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				29F94A0B17EF0A7500BFEE9D /* AreasViewController_iPhone.m in Sources */,
 				29853FA117ACFEBD00129662 /* SBJsonStreamWriterState.m in Sources */,
 				29853FA217ACFEBD00129662 /* SBJsonTokeniser.m in Sources */,
 				29853FA317ACFEBD00129662 /* SBJsonUTF8Stream.m in Sources */,
@@ -630,6 +697,7 @@
 				29853FA517ACFEBD00129662 /* SSKeychain.m in Sources */,
 				29853FA617ACFEBD00129662 /* UGActivity.m in Sources */,
 				29853FA717ACFEBD00129662 /* UGClient.m in Sources */,
+				29F94A1117EF7EC400BFEE9D /* AreasDetailViewController.m in Sources */,
 				29853FA817ACFEBD00129662 /* UGClientResponse.m in Sources */,
 				29853FA917ACFEBD00129662 /* UGHTTPManager.m in Sources */,
 				29853FAA17ACFEBD00129662 /* UGMultiStepAction.m in Sources */,
@@ -639,6 +707,8 @@
 				29853FAE17ACFEBD00129662 /* UGHTTPClient.m in Sources */,
 				29853FAF17ACFEBD00129662 /* UGHTTPHelpers.m in Sources */,
 				29853FB017ACFEBD00129662 /* UGHTTPResult.m in Sources */,
+				29F94A0E17EF113400BFEE9D /* AppliancesViewController_iPhone.m in Sources */,
+				29F94A1517EF82AE00BFEE9D /* LightDetailViewController.m in Sources */,
 				29853FBA17AD0C6300129662 /* ISColorWheel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -666,6 +736,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				29C74CAF1795DDD80092708D /* en */,
+				29F94A1A17EF894300BFEE9D /* cs */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -674,6 +745,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				29C74CBE1795DDD80092708D /* en */,
+				29F94A1817EF894300BFEE9D /* cs */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -682,6 +754,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				29C74CC11795DDD80092708D /* en */,
+				29F94A1917EF894300BFEE9D /* cs */,
 			);
 			name = MainStoryboard_iPad.storyboard;
 			sourceTree = "<group>";
@@ -690,8 +763,58 @@
 			isa = PBXVariantGroup;
 			children = (
 				29C74CD61795DDD90092708D /* en */,
+				29F94A1B17EF894300BFEE9D /* cs */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29F94A1E17EF89F100BFEE9D /* TableLayoutStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29F94A1D17EF89F100BFEE9D /* en */,
+				29F94A1F17EF8A0200BFEE9D /* cs */,
+			);
+			name = TableLayoutStoryboard_iPhone.storyboard;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		29F94A2217EF8A3300BFEE9D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29F94A2117EF8A3300BFEE9D /* en */,
+				29F94A2317EF8A3800BFEE9D /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		29F94A2617EF8B1400BFEE9D /* TableLayoutStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29F94A2517EF8B1400BFEE9D /* en */,
+				29F94A2717EF8B1800BFEE9D /* cs */,
+			);
+			name = TableLayoutStoryboard_iPad.storyboard;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		29F94A2A17EF8B2100BFEE9D /* SettingsStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29F94A2917EF8B2100BFEE9D /* en */,
+				29F94A2B17EF8B2500BFEE9D /* cs */,
+			);
+			name = SettingsStoryboard_iPhone.storyboard;
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		29F94A2E17EF8B2B00BFEE9D /* SettingsStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29F94A2D17EF8B2B00BFEE9D /* en */,
+				29F94A2F17EF8B2E00BFEE9D /* cs */,
+			);
+			name = SettingsStoryboard_iPad.storyboard;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

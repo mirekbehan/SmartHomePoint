@@ -8,7 +8,7 @@
 
 #import "settingsViewController.h"
 #import "ZBarSDK.h"
-
+#import "uhkAppDelegate.h"
 
 @interface settingsViewController () <ZBarReaderDelegate>
 
@@ -40,24 +40,28 @@
 - (IBAction)onButtonTouchUp:(id)sender {    
     ZBarReaderViewController *reader = [ZBarReaderViewController new];
     reader.readerDelegate = self;
-    [reader.scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:0];
+    [reader.scanner setSymbology:0 config:ZBAR_CFG_ENABLE to:0];
+    [reader.scanner setSymbology:ZBAR_QRCODE config:ZBAR_CFG_ENABLE to:1];
     reader.readerView.zoom = 1.0;
     reader.showsZBarControls = NO;
     [self presentViewController:reader animated:YES completion:nil];
 }
 
+- (IBAction)onLoginTouch:(id)sender {
+    [(uhkAppDelegate*)[[UIApplication sharedApplication] delegate] instantiateUserDefinedViewController];
+}
+
 - (void) imagePickerController:(UIImagePickerController*)reader didFinishPickingMediaWithInfo:(NSDictionary*)info {
     id<NSFastEnumeration> results = [info objectForKey: ZBarReaderControllerResults];
-    //UIImage *image = [info objectForKey: UIImagePickerControllerOriginalImage];
+    ZBarSymbol *symbol = nil;
+    for(symbol in results)
+        break;
+    NSLog(@"qr:%@", symbol.data);
     [reader dismissViewControllerAnimated:YES completion:NULL];
 
-
-    /*
-     UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"MainStoryboard_iPhone" bundle:nil];
-     UIViewController* controller = [storyBoard instantiateInitialViewController];
-     [[[[UIApplication sharedApplication] delegate] window] setRootViewController:controller];
-     [[[[UIApplication sharedApplication] delegate] window] makeKeyAndVisible];
-     */
+    //! save the token
+    
+    [(uhkAppDelegate*)[[UIApplication sharedApplication] delegate] instantiateUserDefinedViewController];
 }
 
 - (void) readerControllerDidFailToRead: (ZBarReaderController*) reader withRetry: (BOOL) retry
@@ -66,5 +70,9 @@
         [reader dismissViewControllerAnimated:YES completion:NULL];
 }
 
+
+- (BOOL)shouldAutorotate {
+    return FALSE;
+}
 
 @end

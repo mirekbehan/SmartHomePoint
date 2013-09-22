@@ -10,5 +10,6 @@
 
 @interface settingsViewController : UIViewController
 - (IBAction)onButtonTouchUp:(id)sender;
+- (IBAction)onLoginTouch:(id)sender;
 
 @end

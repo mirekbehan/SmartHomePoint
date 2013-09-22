@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface uhkAppDelegate : UIResponder <UIApplicationDelegate>
+- (void)instantiateUserDefinedViewController;
 
 @property (strong, nonatomic) UIWindow *window;
 

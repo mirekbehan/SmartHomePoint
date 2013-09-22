@@ -15,14 +15,12 @@
 {
     // system settings
     NSString *resetTokenKey = @"reset_token";
-    NSString *displayKey = @"disp";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (defaults==NULL)
         NSAssert(false, @"The settings does not exists!");
     BOOL resetToken = (BOOL)[defaults valueForKey:resetTokenKey];
     if (resetToken)
         [defaults setObject:NO forKey:resetTokenKey];
-    NSNumber *display = [defaults valueForKey:@"disp"];
 
     // user settings and data
     NSString* path = [self getDataFile];
@@ -32,41 +30,19 @@
     }
     
     // select storyboard and initial viewController
-    UIStoryboard *storyBoard = nil;
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        if (resetToken || firstTimeLaunch) {
+    if (resetToken || firstTimeLaunch) {
+        UIStoryboard *storyBoard = nil;
+        if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
             storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPad" bundle:nil];
-        }
-        else {
-            switch (display.intValue) {
-                case 0: // Table layout
-                default:
-                    break;
-                case 1:
-                    break;
-            }
-        }
-    }else{
-        //CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
-        //if (iOSDeviceScreenSize.height == 480) or if (iOSDeviceScreenSize.height == 568)
-        if (resetToken || firstTimeLaunch) {
+        else
             storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPhone" bundle:nil];
-        }
-        else {
-            switch (display.intValue) {
-                case 0: // Table layout
-                default:
-                    break;
-                case 1:
-                    break;
-            }
-        }        
-    }
-
-    if (storyBoard!=NULL) {
+        NSAssert(storyBoard!=NULL, @"storyboard is null");
         UIViewController * controller = [storyBoard instantiateInitialViewController];
         self.window.rootViewController = controller;
+        return YES;
     }
+
+    [self instantiateUserDefinedViewController];
     return YES;
 }
 							
@@ -106,5 +82,39 @@
 }
 
 
+- (void)instantiateUserDefinedViewController
+{
+    // system settings
+    NSNumber *display = [[NSUserDefaults standardUserDefaults] valueForKey:@"disp"];
+    
+    // select storyboard and initial viewController
+    UIStoryboard *storyBoard = nil;
+    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+        switch (display.intValue) {
+            default:
+            case 0: // Table layout
+                storyBoard = [UIStoryboard storyboardWithName:@"TableLayoutStoryboard_iPad" bundle:nil];
+                break;
+            case 1:
+                break;
+        }
+    }else{
+        //CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+        //if (iOSDeviceScreenSize.height == 480) or if (iOSDeviceScreenSize.height == 568)
+        switch (display.intValue) {
+            default:
+            case 0: // Table layout
+                storyBoard = [UIStoryboard storyboardWithName:@"TableLayoutStoryboard_iPhone" bundle:nil];
+                break;
+            case 1:
+                break;
+        }
+    }
+
+    NSAssert(storyBoard!=NULL, @"The controller is null");
+    UIViewController * controller = [storyBoard instantiateInitialViewController];
+    self.window.rootViewController = controller;
+    //[self.window makeKeyAndVisible];
+}
 
 @end
