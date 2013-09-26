@@ -7,16 +7,37 @@
 //
 
 #import "AreasDetailViewController.h"
+#import "uhkAppDelegate.h"
+#import "ApplianceDetailProtocol.h"
 
 @interface AreasDetailViewController ()
-
+@property Room* CurrentRoom;
+@property DataManager* DataManager;
+@property NSMutableArray* CurrentTypesOfAppliances;
 @end
 
 @implementation AreasDetailViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+-(void)setRoom:(Room*)room
 {
-    self = [super initWithStyle:style];
+    uhkAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    _DataManager = appDelegate.dataManager;
+    _CurrentRoom = room;
+    _CurrentTypesOfAppliances = [NSMutableArray array];
+    for (NSInteger i=0; i<[_DataManager getRegisteredApllianceTypesCount]; i++) {
+        AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
+        for (Appliance* appliance in _CurrentRoom.Appliances) {
+            if (appliance.TypeOfAppliance==aType) {
+                [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:i]];
+                break;
+            }
+        }
+    }
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
     if (self) {
         // Custom initialization
     }
@@ -27,11 +48,18 @@
 {
     [super viewDidLoad];
 
+    self.navigationItem.title = _CurrentRoom.Name;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,81 +72,145 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return _CurrentTypesOfAppliances.count;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return @"";
+    int idx = [[_CurrentTypesOfAppliances objectAtIndex:section] intValue];
+    if ([_DataManager getRegisteredApllianceTypesCount]<=idx)
+        return @"";
+    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    return [_DataManager getNameOfApplianceType:aType];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section==0)
-        return 3;
-    return 1;
+    int idx = [[_CurrentTypesOfAppliances objectAtIndex:section] intValue];
+    if ([_DataManager getRegisteredApllianceTypesCount]<=idx) {
+        NSAssert(false, @"RegisteredApllianceTypesCount out of bounds");
+        return 0;
+    }
+    NSInteger cnt = 0;
+    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    for (Appliance* appliance in _CurrentRoom.Appliances) {
+        if (appliance.TypeOfAppliance == aType)
+            cnt++;
+    }
+    return cnt;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier;
-    switch (indexPath.section) {
-        case 0:
-        {
-            if (indexPath.row<2)
-                CellIdentifier = @"lightCell";
-            else
-                CellIdentifier = @"lightSimpleCell";
-            break;
+    int idx = [[_CurrentTypesOfAppliances objectAtIndex:indexPath.section] intValue];
+    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    Appliance* currentAppliance = nil;
+    NSInteger cnt = 0;
+    for (Appliance* appliance in _CurrentRoom.Appliances) {
+        if (appliance.TypeOfAppliance == aType) {
+            if (cnt==indexPath.row) {
+                currentAppliance = appliance;
+                break;
+            }
+            cnt++;
         }
-        case 1:
+    }
+    if (currentAppliance == nil) {
+        NSAssert(false, @"Current appliance is nil");
+        return nil;
+    }
+    switch (currentAppliance.TypeOfAppliance) {
+        case atLight:
+            if (((Light*)currentAppliance).TypeOfLight == ltSimple)
+                CellIdentifier = @"lightSimpleCell";
+            else
+                CellIdentifier = @"lightCell";
+            break;
+        case atTemperature:
             CellIdentifier = @"tempCell";
             break;
+        case atLouver:
+            CellIdentifier = @"louverCell";
+            break;
+        case atIrrigation:
+            CellIdentifier = @"louverCell";
+            break;
+        default:
+            NSAssert(false, @"Appliance detail unimplemented");
+            break;
     }
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textLabel.backgroundColor = [UIColor clearColor];
-    switch (indexPath.section) {
-        case 0:
-        {
-            switch (indexPath.row) {
-                case 0:
-                    cell.textLabel.text = @"Light 1";
-                    cell.detailTextLabel.text = @"ON";
-                    break;
-                case 1:
-                    cell.textLabel.text = @"Light 2";
-                    cell.detailTextLabel.text = @"OFF";
-                    break;
-                case 2:
-                    cell.textLabel.text = @"Light simple";
-                    cell.textLabel.backgroundColor = [UIColor clearColor];
-                    break;
-                default:
-                    break;
-            }
-            break;
+    cell.textLabel.text = currentAppliance.Name;
+    cell.detailTextLabel.text = [currentAppliance getDetailString];
+
+    UISwitch* simpleSwitch = ((UISwitch *) [cell viewWithTag: 1]);
+    if (simpleSwitch!=nil) {
+        [simpleSwitch addTarget:self action:@selector(setSwitchState:) forControlEvents:UIControlEventValueChanged];
+        [simpleSwitch setTag:100*indexPath.section+indexPath.row];
+        switch (currentAppliance.TypeOfAppliance) {
+            case atLight:
+                if (((Light*)currentAppliance).TypeOfLight == ltSimple)
+                    [simpleSwitch setOn:((Light*)currentAppliance).Enabled];
+            default:
+                break;
         }
-        case 1:
-        {
-            cell.textLabel.text = @"Temperature";
-            cell.detailTextLabel.text = @"20°C";
-            break;
-        }
-        default:
-            break;
     }
     return cell;
 }
-/*
-#pragma mark - Navigation
 
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)setSwitchState:(UISwitch*)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSInteger section = sender.tag/100;
+    NSInteger row = sender.tag - (100*section);
+    int idx = [[_CurrentTypesOfAppliances objectAtIndex:section] intValue];
+    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    Appliance* currentAppliance = nil;
+    NSInteger cnt = 0;
+    for (Appliance* appliance in _CurrentRoom.Appliances) {
+        if (appliance.TypeOfAppliance == aType) {
+            if (cnt==row) {
+                currentAppliance = appliance;
+                break;
+            }
+            cnt++;
+        }
+    }
+    if ([currentAppliance isKindOfClass:[Light class]])
+        ((Light*)currentAppliance).Enabled = [sender isOn];
 }
 
- */
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    int idx = [[_CurrentTypesOfAppliances objectAtIndex:indexPath.section] intValue];
+    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    Appliance* currentAppliance = nil;
+    NSInteger cnt = 0;
+    for (Appliance* appliance in _CurrentRoom.Appliances) {
+        if (appliance.TypeOfAppliance == aType) {
+            if (cnt==indexPath.row) {
+                currentAppliance = appliance;
+                break;
+            }
+            cnt++;
+        }
+    }
+    if (currentAppliance == nil) {
+        NSAssert(false, @"Current appliance is nil");
+        return;
+    }
+    
+    UIViewController* controller = [segue destinationViewController];
+    if ([controller conformsToProtocol:@protocol(ApplianceDetailProtocol)]) {
+        UIViewController <ApplianceDetailProtocol> *dc = (UIViewController <ApplianceDetailProtocol> *) controller;
+        [dc setAppliance:currentAppliance];
+    }
+}
+
 
 @end

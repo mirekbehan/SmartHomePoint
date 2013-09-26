@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2q-x5-2Rx">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2q-x5-2Rx">
                                 <rect key="frame" x="171" y="548" width="100" height="30"/>
                                 <state key="normal" title="Scan QR code">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,23 +26,10 @@
                                     <action selector="onButtonTouchUp:" destination="vRn-UZ-LQU" eventType="touchUpInside" id="iJi-hh-YZv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome, it is the first time you launch this aplication. You must scan the QR Code .... STEPS WHAT TO DO" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="238" translatesAutoresizingMaskIntoConstraints="NO" id="wj6-B7-kw4">
-                                <rect key="frame" x="102" y="178" width="238" height="281"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="J3E-9f-2eV"/>
-                                    <constraint firstAttribute="height" constant="281" id="zsz-QZ-wWj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wj6-B7-kw4" firstAttribute="top" secondItem="b0s-3e-zA5" secondAttribute="top" constant="178" id="4DK-qk-K98"/>
-                            <constraint firstItem="Z2q-x5-2Rx" firstAttribute="centerX" secondItem="wj6-B7-kw4" secondAttribute="centerX" id="Asx-OL-NBk"/>
                             <constraint firstAttribute="bottom" secondItem="Z2q-x5-2Rx" secondAttribute="bottom" constant="446" id="BxB-hz-2W7"/>
-                            <constraint firstItem="wj6-B7-kw4" firstAttribute="leading" secondItem="b0s-3e-zA5" secondAttribute="leading" constant="102" id="jOv-OB-T3C"/>
                         </constraints>
                     </view>
                 </viewController>

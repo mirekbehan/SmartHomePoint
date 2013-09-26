@@ -13,6 +13,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window=[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
     // system settings
     NSString *resetTokenKey = @"reset_token";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -39,6 +41,8 @@
         NSAssert(storyBoard!=NULL, @"storyboard is null");
         UIViewController * controller = [storyBoard instantiateInitialViewController];
         self.window.rootViewController = controller;
+        [self.window addSubview:controller.view];
+        [self.window makeKeyAndVisible];
         return YES;
     }
 
@@ -113,8 +117,13 @@
 
     NSAssert(storyBoard!=NULL, @"The controller is null");
     UIViewController * controller = [storyBoard instantiateInitialViewController];
+
+    //!TODO
+    _dataManager = [[DataManager alloc] init];
+
     self.window.rootViewController = controller;
-    //[self.window makeKeyAndVisible];
+    [self.window addSubview:controller.view];
+    [self.window makeKeyAndVisible];
 }
 
 @end

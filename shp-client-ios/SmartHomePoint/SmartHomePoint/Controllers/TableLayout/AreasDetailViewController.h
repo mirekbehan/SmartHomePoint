@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Room.h"
 
 @interface AreasDetailViewController : UITableViewController
-
+-(void)setRoom:(Room*)room;
 @end

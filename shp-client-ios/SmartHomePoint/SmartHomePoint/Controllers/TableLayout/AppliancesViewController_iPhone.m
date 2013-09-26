@@ -14,14 +14,14 @@
 
 @implementation AppliancesViewController_iPhone
 
-- (id)initWithStyle:(UITableViewStyle)style
+/*- (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
     }
     return self;
-}
+}*/
 
 - (void)viewDidLoad
 {
@@ -49,7 +49,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,6 +64,9 @@
             cell.textLabel.text = @"Temperature";
             break;
         case 2:
+            cell.textLabel.text = @"Louvers";
+            break;
+        case 3:
             cell.textLabel.text = @"Irrigation";
             break;
         default:

@@ -51,6 +51,15 @@
 		29853FB017ACFEBD00129662 /* UGHTTPResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853F9817ACFEBD00129662 /* UGHTTPResult.m */; };
 		29853FB217ACFF8700129662 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29853FB117ACFF8700129662 /* Security.framework */; };
 		29853FBA17AD0C6300129662 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853FB917AD0C6300129662 /* ISColorWheel.m */; };
+		2993BEE617F1B00600406F8E /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEE517F1B00600406F8E /* DataManager.m */; };
+		2993BEED17F1B3A200406F8E /* Appliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEEC17F1B3A200406F8E /* Appliance.m */; };
+		2993BEF117F1B9FB00406F8E /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEF017F1B9FB00406F8E /* Light.m */; };
+		2993BEF717F1BA8700406F8E /* Temperature.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEF617F1BA8700406F8E /* Temperature.m */; };
+		2993BEFE17F1C79B00406F8E /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEFD17F1C79B00406F8E /* Room.m */; };
+		2993BF0117F1C7B700406F8E /* Area.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BF0017F1C7B700406F8E /* Area.m */; };
+		2993BF0417F1CED600406F8E /* Louver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BF0317F1CED600406F8E /* Louver.m */; };
+		2993BF0717F1CEE900406F8E /* Irrigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BF0617F1CEE900406F8E /* Irrigation.m */; };
+		2993BF0B17F46BB200406F8E /* TemperatureDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BF0A17F46BB200406F8E /* TemperatureDetailViewController.m */; };
 		29C74CA61795DDD80092708D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA51795DDD80092708D /* UIKit.framework */; };
 		29C74CA81795DDD80092708D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA71795DDD80092708D /* Foundation.framework */; };
 		29C74CAA1795DDD80092708D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA91795DDD80092708D /* CoreGraphics.framework */; };
@@ -175,11 +184,32 @@
 		29853FB117ACFF8700129662 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29853FB817AD0C6300129662 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		29853FB917AD0C6300129662 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		2993BEE417F1B00600406F8E /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = DataModel/DataManager.h; sourceTree = "<group>"; };
+		2993BEE517F1B00600406F8E /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = DataModel/DataManager.m; sourceTree = "<group>"; };
+		2993BEEB17F1B3A200406F8E /* Appliance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appliance.h; path = DataModel/Appliance.h; sourceTree = "<group>"; };
+		2993BEEC17F1B3A200406F8E /* Appliance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Appliance.m; path = DataModel/Appliance.m; sourceTree = "<group>"; };
+		2993BEEF17F1B9FB00406F8E /* Light.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Light.h; path = DataModel/Appliances/Light.h; sourceTree = "<group>"; };
+		2993BEF017F1B9FB00406F8E /* Light.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Light.m; path = DataModel/Appliances/Light.m; sourceTree = "<group>"; };
+		2993BEF517F1BA8700406F8E /* Temperature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Temperature.h; path = DataModel/Appliances/Temperature.h; sourceTree = "<group>"; };
+		2993BEF617F1BA8700406F8E /* Temperature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Temperature.m; path = DataModel/Appliances/Temperature.m; sourceTree = "<group>"; };
+		2993BEFB17F1BCE900406F8E /* AppliancesInclude.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppliancesInclude.h; path = DataModel/Appliances/AppliancesInclude.h; sourceTree = "<group>"; };
+		2993BEFC17F1C79B00406F8E /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Room.h; path = DataModel/Room.h; sourceTree = "<group>"; };
+		2993BEFD17F1C79B00406F8E /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Room.m; path = DataModel/Room.m; sourceTree = "<group>"; };
+		2993BEFF17F1C7B700406F8E /* Area.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Area.h; path = DataModel/Area.h; sourceTree = "<group>"; };
+		2993BF0017F1C7B700406F8E /* Area.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Area.m; path = DataModel/Area.m; sourceTree = "<group>"; };
+		2993BF0217F1CED600406F8E /* Louver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Louver.h; path = DataModel/Appliances/Louver.h; sourceTree = "<group>"; };
+		2993BF0317F1CED600406F8E /* Louver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Louver.m; path = DataModel/Appliances/Louver.m; sourceTree = "<group>"; };
+		2993BF0517F1CEE900406F8E /* Irrigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Irrigation.h; path = DataModel/Appliances/Irrigation.h; sourceTree = "<group>"; };
+		2993BF0617F1CEE900406F8E /* Irrigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Irrigation.m; path = DataModel/Appliances/Irrigation.m; sourceTree = "<group>"; };
+		2993BF0817F45AF500406F8E /* ApplianceDetailProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ApplianceDetailProtocol.h; path = DataModel/ApplianceDetailProtocol.h; sourceTree = "<group>"; };
+		2993BF0917F46BB200406F8E /* TemperatureDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TemperatureDetailViewController.h; path = Controllers/Shared/TemperatureDetailViewController.h; sourceTree = "<group>"; };
+		2993BF0A17F46BB200406F8E /* TemperatureDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TemperatureDetailViewController.m; path = Controllers/Shared/TemperatureDetailViewController.m; sourceTree = "<group>"; };
+		29978E3617F0627F00C2511C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/SmartHomePoint-Info.plist"; sourceTree = "<group>"; };
+		29978E3817F0628600C2511C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = cs; path = "cs.lproj/SmartHomePoint-Info.plist"; sourceTree = "<group>"; };
 		29C74CA21795DDD80092708D /* SmartHomePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C74CA51795DDD80092708D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29C74CA71795DDD80092708D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29C74CA91795DDD80092708D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		29C74CAD1795DDD80092708D /* SmartHomePoint-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SmartHomePoint-Info.plist"; sourceTree = "<group>"; };
 		29C74CAF1795DDD80092708D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29C74CB11795DDD80092708D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		29C74CB31795DDD80092708D /* SmartHomePoint-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartHomePoint-Prefix.pch"; sourceTree = "<group>"; };
@@ -323,7 +353,6 @@
 			children = (
 				29F94A1217EF823D00BFEE9D /* Shared */,
 				29F94A0817EF07D100BFEE9D /* TableLayout */,
-				29BB01AB17BD7767005311B8 /* Layouts */,
 				29836FB5179ABA15005FA48C /* Settings */,
 			);
 			name = Controllers;
@@ -431,11 +460,37 @@
 			path = ISColorWheel;
 			sourceTree = "<group>";
 		};
-		29BB01AB17BD7767005311B8 /* Layouts */ = {
+		2993BEE317F1AFBC00406F8E /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				2993BEEE17F1B9B900406F8E /* Appliances */,
+				2993BEEB17F1B3A200406F8E /* Appliance.h */,
+				2993BEEC17F1B3A200406F8E /* Appliance.m */,
+				2993BF0817F45AF500406F8E /* ApplianceDetailProtocol.h */,
+				2993BEFC17F1C79B00406F8E /* Room.h */,
+				2993BEFD17F1C79B00406F8E /* Room.m */,
+				2993BEFF17F1C7B700406F8E /* Area.h */,
+				2993BF0017F1C7B700406F8E /* Area.m */,
+				2993BEE417F1B00600406F8E /* DataManager.h */,
+				2993BEE517F1B00600406F8E /* DataManager.m */,
 			);
-			name = Layouts;
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		2993BEEE17F1B9B900406F8E /* Appliances */ = {
+			isa = PBXGroup;
+			children = (
+				2993BEFB17F1BCE900406F8E /* AppliancesInclude.h */,
+				2993BEEF17F1B9FB00406F8E /* Light.h */,
+				2993BEF017F1B9FB00406F8E /* Light.m */,
+				2993BEF517F1BA8700406F8E /* Temperature.h */,
+				2993BEF617F1BA8700406F8E /* Temperature.m */,
+				2993BF0217F1CED600406F8E /* Louver.h */,
+				2993BF0317F1CED600406F8E /* Louver.m */,
+				2993BF0517F1CEE900406F8E /* Irrigation.h */,
+				2993BF0617F1CEE900406F8E /* Irrigation.m */,
+			);
+			name = Appliances;
 			sourceTree = "<group>";
 		};
 		29C74C991795DDD80092708D = {
@@ -480,6 +535,7 @@
 		29C74CAB1795DDD80092708D /* SmartHomePoint */ = {
 			isa = PBXGroup;
 			children = (
+				2993BEE317F1AFBC00406F8E /* DataModel */,
 				29836FB9179ABBA8005FA48C /* Storyboards */,
 				29836FB4179ABA04005FA48C /* Controllers */,
 				29C74CB41795DDD80092708D /* uhkAppDelegate.h */,
@@ -497,7 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				29836FBC179B2539005FA48C /* Settings.bundle */,
-				29C74CAD1795DDD80092708D /* SmartHomePoint-Info.plist */,
+				29978E3717F0627F00C2511C /* SmartHomePoint-Info.plist */,
 				29C74CAE1795DDD80092708D /* InfoPlist.strings */,
 				29C74CB11795DDD80092708D /* main.m */,
 				29C74CB31795DDD80092708D /* SmartHomePoint-Prefix.pch */,
@@ -546,6 +602,8 @@
 			children = (
 				29F94A1317EF82AE00BFEE9D /* LightDetailViewController.h */,
 				29F94A1417EF82AE00BFEE9D /* LightDetailViewController.m */,
+				2993BF0917F46BB200406F8E /* TemperatureDetailViewController.h */,
+				2993BF0A17F46BB200406F8E /* TemperatureDetailViewController.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -677,20 +735,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2993BEFE17F1C79B00406F8E /* Room.m in Sources */,
 				29C74CB21795DDD80092708D /* main.m in Sources */,
 				29C74CB61795DDD80092708D /* uhkAppDelegate.m in Sources */,
+				2993BF0717F1CEE900406F8E /* Irrigation.m in Sources */,
 				29C74CC51795DDD80092708D /* uhkViewController.m in Sources */,
+				2993BF0417F1CED600406F8E /* Louver.m in Sources */,
 				29836FB8179ABBA0005FA48C /* settingsViewController.m in Sources */,
 				29853F9917ACFEBD00129662 /* NSObject+SBJson.m in Sources */,
 				29853F9A17ACFEBD00129662 /* SBJsonParser.m in Sources */,
+				2993BEF117F1B9FB00406F8E /* Light.m in Sources */,
 				29853F9B17ACFEBD00129662 /* SBJsonStreamParser.m in Sources */,
 				29853F9C17ACFEBD00129662 /* SBJsonStreamParserAccumulator.m in Sources */,
+				2993BF0B17F46BB200406F8E /* TemperatureDetailViewController.m in Sources */,
+				2993BF0117F1C7B700406F8E /* Area.m in Sources */,
 				29853F9D17ACFEBD00129662 /* SBJsonStreamParserAdapter.m in Sources */,
 				29853F9E17ACFEBD00129662 /* SBJsonStreamParserState.m in Sources */,
 				29853F9F17ACFEBD00129662 /* SBJsonStreamWriter.m in Sources */,
 				29853FA017ACFEBD00129662 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				29F94A0B17EF0A7500BFEE9D /* AreasViewController_iPhone.m in Sources */,
 				29853FA117ACFEBD00129662 /* SBJsonStreamWriterState.m in Sources */,
+				2993BEED17F1B3A200406F8E /* Appliance.m in Sources */,
 				29853FA217ACFEBD00129662 /* SBJsonTokeniser.m in Sources */,
 				29853FA317ACFEBD00129662 /* SBJsonUTF8Stream.m in Sources */,
 				29853FA417ACFEBD00129662 /* SBJsonWriter.m in Sources */,
@@ -698,6 +763,8 @@
 				29853FA617ACFEBD00129662 /* UGActivity.m in Sources */,
 				29853FA717ACFEBD00129662 /* UGClient.m in Sources */,
 				29F94A1117EF7EC400BFEE9D /* AreasDetailViewController.m in Sources */,
+				2993BEF717F1BA8700406F8E /* Temperature.m in Sources */,
+				2993BEE617F1B00600406F8E /* DataManager.m in Sources */,
 				29853FA817ACFEBD00129662 /* UGClientResponse.m in Sources */,
 				29853FA917ACFEBD00129662 /* UGHTTPManager.m in Sources */,
 				29853FAA17ACFEBD00129662 /* UGMultiStepAction.m in Sources */,
@@ -732,6 +799,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		29978E3717F0627F00C2511C /* SmartHomePoint-Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29978E3617F0627F00C2511C /* en */,
+				29978E3817F0628600C2511C /* cs */,
+			);
+			name = "SmartHomePoint-Info.plist";
+			sourceTree = "<group>";
+		};
 		29C74CAE1795DDD80092708D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -891,7 +967,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SmartHomePoint/SmartHomePoint-Prefix.pch";
-				INFOPLIST_FILE = "SmartHomePoint/SmartHomePoint-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SmartHomePointTests/SmartHomePointTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -907,7 +983,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SmartHomePoint/SmartHomePoint-Prefix.pch";
-				INFOPLIST_FILE = "SmartHomePoint/SmartHomePoint-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/SmartHomePointTests/SmartHomePointTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

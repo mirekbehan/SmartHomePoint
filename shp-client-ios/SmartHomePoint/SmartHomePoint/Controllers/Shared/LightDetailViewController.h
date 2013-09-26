@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplianceDetailProtocol.h"
 
-@interface LightDetailViewController : UIViewController
+@interface LightDetailViewController : UIViewController <ApplianceDetailProtocol>
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UIView *colorWheel;
+@property (weak, nonatomic) IBOutlet UIView *well;
 
 @end

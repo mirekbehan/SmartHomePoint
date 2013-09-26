@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartHomePoint/Controllers/Layouts/tableLayoutViewController_iPhone.m"
-            timestampString = "398294320.062142"
+            filePath = "SmartHomePoint/Controllers/TableLayout/AreasDetailViewController.m"
+            timestampString = "401892947.756846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "-setSwitchState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartHomePoint/Controllers/Settings/settingsViewController.m"
-            timestampString = "401538318.19655"
+            filePath = "SmartHomePoint/Controllers/TableLayout/AreasDetailViewController.m"
+            timestampString = "401892947.756846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-setSwitchState:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartHomePoint/Controllers/TableLayout/AreasViewController_iPhone.m"
-            timestampString = "401573665.022905"
+            filePath = "SmartHomePoint/DataModel/Appliances/Temperature.m"
+            timestampString = "401896399.514442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-getDetailString"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,29 +57,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SmartHomePoint/uhkAppDelegate.m"
-            timestampString = "401575142.248836"
+            filePath = "SmartHomePoint/DataModel/DataManager.m"
+            timestampString = "401895423.626768"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-retreiveAppliancesFromServer"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SmartHomePoint/DataModel/Appliances/Temperature.m"
+            timestampString = "401896217.917702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
             endingLineNumber = "39"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SmartHomePoint/uhkAppDelegate.m"
-            timestampString = "401575154.16241"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            landmarkName = "-setDefinedTemperatureInCelsius:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

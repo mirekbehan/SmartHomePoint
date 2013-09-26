@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataManager.h"
 
 @interface uhkAppDelegate : UIResponder <UIApplicationDelegate>
 - (void)instantiateUserDefinedViewController;
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property DataManager* dataManager;
 @end

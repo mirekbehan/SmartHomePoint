@@ -127,6 +127,30 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
 @synthesize continuous = _continuous;
 @synthesize delegate = _delegate;
 
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder]))
+    {
+        _radialImage = NULL;
+        _imageData = NULL;
+        
+        _imageDataLength = 0;
+        
+        _brightness = 1.0;
+        _knobSize = CGSizeMake(20, 20);
+        _touchPoint = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0);
+        _radius = (MIN(self.frame.size.width, self.frame.size.height) / 2.0) - 1.0;
+        ISColorKnob* knob = [[ISColorKnob alloc] init];
+        self.knobView = nil;//knob;
+        knob = NULL;
+        
+        self.backgroundColor = [UIColor clearColor];
+
+        _continuous = false;
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     if ((self = [super initWithFrame:frame]))
@@ -142,6 +166,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
         
         ISColorKnob* knob = [[ISColorKnob alloc] init];
         self.knobView = knob;
+        knob = NULL;
         
         self.backgroundColor = [UIColor clearColor];
         
@@ -309,6 +334,7 @@ static PixelRGB ISColorWheel_HSBToRGB (float h, float s, float v)
     if (_knobView)
     {
         [_knobView removeFromSuperview];
+        _knobView = NULL;
     }
     
     _knobView = knobView;

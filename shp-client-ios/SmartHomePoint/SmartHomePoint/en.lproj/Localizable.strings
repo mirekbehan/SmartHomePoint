@@ -6,3 +6,9 @@
   Copyright (c) 2013 Jaroslav Kutnar @ University Hradec Kralove. All rights reserved.
 */
 "Areas" = "Areas";
+"Lights" = "Lights";
+"Temperature" = "Temperature";
+"Louvers" = "Louvers";
+"Irrigation" = "Irrigation";
+"ON" = "ON";
+"OFF" = "OFF";

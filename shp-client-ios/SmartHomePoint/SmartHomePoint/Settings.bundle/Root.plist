@@ -13,8 +13,8 @@
 		<dict>
 			<key>Values</key>
 			<array>
-				<false/>
-				<true/>
+				<integer>0</integer>
+				<integer>1</integer>
 			</array>
 			<key>Titles</key>
 			<array>
@@ -28,9 +28,11 @@
 			<key>Key</key>
 			<string>disp</string>
 			<key>DefaultValue</key>
-			<false/>
+			<integer>0</integer>
 		</dict>
 		<dict>
+			<key>FooterText</key>
+			<string>Next time the application will launch the token will be reset</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 			<key>Title</key>
@@ -45,6 +47,32 @@
 			<string>reset_token</string>
 			<key>DefaultValue</key>
 			<false/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>User settings</string>
+		</dict>
+		<dict>
+			<key>Titles</key>
+			<array>
+				<string>Celsius</string>
+				<string>Fahrenheit</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+			</array>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Temperature scale</string>
+			<key>Key</key>
+			<string>temp</string>
+			<key>DefaultValue</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>StringsTable</key>
