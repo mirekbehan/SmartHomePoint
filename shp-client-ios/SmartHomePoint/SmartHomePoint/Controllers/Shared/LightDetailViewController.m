@@ -41,6 +41,10 @@
     [colorWheel setBrightness:1.0];
     [colorWheel updateImage];
     _slider.value = _CurrentLight.Dim.floatValue;
+    _uiBrightnessInfo.text = [_CurrentLight getDetailString];
+    _well.backgroundColor = colorWheel.currentColor;
+
+    self.navigationItem.title = _CurrentLight.Name;
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +61,7 @@
     _well.backgroundColor = colorWheel.currentColor;
 */
     _CurrentLight.Dim = [NSNumber numberWithFloat:_slider.value];
+    _uiBrightnessInfo.text = [_CurrentLight getDetailString];
 }
 
 - (void)colorWheelDidChangeColor:(ISColorWheel *)colorWheel
@@ -64,6 +69,13 @@
     _well.backgroundColor = colorWheel.currentColor;
     _CurrentLight.Color = colorWheel.currentColor;
 }
+
+/*
+- (BOOL)shouldAutorotate
+{
+    return FALSE;
+}*/
+
 
 #pragma mark - ApplianceDetailProtocol
 

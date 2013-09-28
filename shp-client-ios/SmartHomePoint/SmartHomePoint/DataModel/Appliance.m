@@ -27,5 +27,9 @@
     return @"";
 }
 
+-(BOOL) supportSwitch
+{
+    return FALSE;
+}
 
 @end

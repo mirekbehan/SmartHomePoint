@@ -1,20 +1,21 @@
 //
-//  AreasViewController_iPhone.m
+//  AreasTableViewController.m
 //  SmartHomePoint
 //
-//  Created by Jarda on 9/22/13.
+//  Created by Jarda on 9/27/13.
 //  Copyright (c) 2013 Jaroslav Kutnar @ University Hradec Kralove. All rights reserved.
 //
 
-#import "AreasViewController_iPhone.h"
+#import "AreasTableViewController.h"
 #import "uhkAppDelegate.h"
-#import "AreasDetailViewController.h"
+#import "FilteredAppliancesTableViewController.h"
 
-@interface AreasViewController_iPhone ()
+@interface AreasTableViewController ()
 @property DataManager* DataManager;
 @end
 
-@implementation AreasViewController_iPhone
+@implementation AreasTableViewController
+
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -64,17 +65,18 @@
     return cell;
 }
 
- #pragma mark - Navigation
- 
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
-     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-     Area* area = [_DataManager.Areas objectAtIndex:indexPath.section];
-     Room* room = [area.Rooms objectAtIndex:indexPath.row];
+#pragma mark - Navigation
 
-     UIViewController* controller = [segue destinationViewController];
-     if ([controller isKindOfClass:[AreasDetailViewController class]])
-         [((AreasDetailViewController*)controller) setRoom:room];
- }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Area* area = [_DataManager.Areas objectAtIndex:indexPath.section];
+    Room* room = [area.Rooms objectAtIndex:indexPath.row];
+    
+    UIViewController* controller = [segue destinationViewController];
+    if ([controller isKindOfClass:[FilteredAppliancesTableViewController class]])
+        [((FilteredAppliancesTableViewController*)controller) setRoom:room];
+}
+
 
 @end

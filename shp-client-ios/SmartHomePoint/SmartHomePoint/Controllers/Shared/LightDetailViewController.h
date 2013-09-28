@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UISlider *slider;
 @property (weak, nonatomic) IBOutlet UIView *colorWheel;
 @property (weak, nonatomic) IBOutlet UIView *well;
+@property (weak, nonatomic) IBOutlet UILabel *uiBrightnessInfo;
 
 @end

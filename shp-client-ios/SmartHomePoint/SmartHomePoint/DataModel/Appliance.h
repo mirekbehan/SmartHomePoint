@@ -17,8 +17,9 @@
     } AppliancetType;
 
 -(id)initWithName:(NSString*)name;
--(NSString*) getDetailString;
 
+-(NSString*) getDetailString;
+-(BOOL) supportSwitch;
 
 @property (readonly) AppliancetType TypeOfAppliance;
 @property (readonly) NSString* Name;

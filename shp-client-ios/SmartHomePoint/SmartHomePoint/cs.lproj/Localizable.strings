@@ -6,9 +6,11 @@
   Copyright (c) 2013 Jaroslav Kutnar @ University Hradec Kralove. All rights reserved.
 */
 "Areas" = "Oblasti";
+"Appliances" = "Appliances";
 "Lights" = "Světla";
 "Temperature" = "Teplota";
 "Louvers" = "Žaluzie";
 "Irrigation" = "Zavlažování";
 "ON" = "Zapnuto";
 "OFF" = "Vypnuto";
+"All appliances" = "Všechna zařízení";

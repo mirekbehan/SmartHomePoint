@@ -48,5 +48,9 @@
     return [NSString stringWithFormat:@"%ld%%",lroundf(_Dim.floatValue*100)];
 }
 
+-(BOOL) supportSwitch
+{
+    return _TypeOfLight==ltSimple;
+}
 
 @end

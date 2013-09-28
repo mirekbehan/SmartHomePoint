@@ -35,6 +35,8 @@
     _uiStepper.value = _CurrentTemperature.DefinedTemperatureInCelsius.doubleValue;
     _uiStepper.minimumValue = _CurrentTemperature.MinTemperature.doubleValue;
     _uiStepper.maximumValue = _CurrentTemperature.MaxTemperature.doubleValue;
+
+    self.navigationItem.title = _CurrentTemperature.Name;
 }
 
 - (void)didReceiveMemoryWarning
