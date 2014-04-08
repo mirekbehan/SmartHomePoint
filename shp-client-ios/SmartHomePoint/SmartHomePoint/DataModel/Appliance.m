@@ -27,6 +27,11 @@
     return @"";
 }
 
+-(UIImage*) getDetailImage
+{
+    return nil;
+}
+
 -(BOOL) supportSwitch
 {
     return FALSE;

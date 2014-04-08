@@ -158,7 +158,10 @@
                 CellIdentifier = @"lightCell";
             break;
         case atTemperature:
-            CellIdentifier = @"tempCell";
+            if (((Temperature*)currentAppliance).TypeOfThermo == ttSensor)
+                CellIdentifier = @"thermosensorCell";
+            else
+                CellIdentifier = @"thermostatCell";
             break;
         case atLouver:
             CellIdentifier = @"louverCell";
@@ -177,18 +180,19 @@
     cell.textLabel.text = currentAppliance.Name;
     cell.detailTextLabel.text = [currentAppliance getDetailString];
 
-    UIImageView* detailImage = (UIImageView *)[cell viewWithTag:2];
-    if (detailImage) {
+    UIImageView* detailImageView = (UIImageView *)[cell viewWithTag:2];
+    if (detailImageView) {
+        detailImageView.image = [currentAppliance getDetailImage];
         switch (currentAppliance.TypeOfAppliance) {
             case atLight:
-            {
+            {//!TODO - create colored image
                 Light* light = (Light*)currentAppliance;
                 if (light.TypeOfLight == ltSimple)
                     break;
                 if (light.Dim.doubleValue==0.0)
-                    detailImage.backgroundColor = [UIColor clearColor];
+                    detailImageView.backgroundColor = [UIColor clearColor];
                 else
-                    detailImage.backgroundColor = light.Color;
+                    detailImageView.backgroundColor = light.Color;
                 break;
             }
             default:

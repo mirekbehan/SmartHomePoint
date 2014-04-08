@@ -13,6 +13,11 @@
 @synthesize TypeOfAppliance = _TypeOfAppliance;
 @synthesize Dim = _Dim;
 
+-(id)initWithName:(NSString *)name
+{
+    NSAssert(false, @"never init only with name");
+    return nil;
+}
 
 -(id)initWithName:(NSString*)name andType:(LightType)lightType
 {
@@ -46,6 +51,15 @@
     if (_Dim.doubleValue==0.0)
         return NSLocalizedString(@"OFF", nil);
     return [NSString stringWithFormat:@"%ld%%",lroundf(_Dim.floatValue*100)];
+}
+
+-(UIImage*) getDetailImage
+{
+    if (_TypeOfLight==ltSimple)
+        return nil;
+    if (_Dim.doubleValue==0.0)
+        return nil;
+    return [UIImage imageNamed:@"Bulb_Cell.png"];
 }
 
 -(BOOL) supportSwitch

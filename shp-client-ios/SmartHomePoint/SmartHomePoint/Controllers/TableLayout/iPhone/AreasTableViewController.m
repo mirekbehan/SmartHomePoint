@@ -31,6 +31,9 @@
     [super viewDidLoad];
     uhkAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
     _DataManager = appDelegate.dataManager;
+    
+    [[self.tabBarController.tabBar.items objectAtIndex:0] setTitle:NSLocalizedString(@"Areas", nil)];
+    [[self.tabBarController.tabBar.items objectAtIndex:1] setTitle:NSLocalizedString(@"Appliances", nil)];
 }
 
 - (void)didReceiveMemoryWarning

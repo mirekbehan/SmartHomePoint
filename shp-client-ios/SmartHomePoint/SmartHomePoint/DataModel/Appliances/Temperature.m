@@ -12,11 +12,19 @@
 @synthesize DefinedTemperatureInCelsius = _DefinedTemperatureInCelsius;
 @synthesize TypeOfAppliance = _TypeOfAppliance;
 
--(id)initWithName:(NSString*)name
+-(id)initWithName:(NSString *)name
+{
+    NSAssert(false, @"never init only with name");
+    return nil;
+}
+
+-(id)initWithName:(NSString*)name Type:(ThermoType)thermoType AndTemperatureInCelsius:(NSNumber*)temperatureInCelsius
 {
     self = [super initWithName:name];
     if (self) {
         _TypeOfAppliance = atTemperature;
+        _TypeOfThermo = thermoType;
+        _TemperatureInCelsius = temperatureInCelsius;
         _MinTemperature = [NSNumber numberWithDouble: 3.5];
         _MaxTemperature = [NSNumber numberWithDouble:35.0];
     }
@@ -43,9 +51,20 @@
 
 -(NSString*) getDetailString
 {
+    NSNumber *temperatureUnit = [[NSUserDefaults standardUserDefaults] valueForKey:@"temp"];
+    switch (temperatureUnit.intValue) {
+        case 0:
+            return [NSString stringWithFormat:@"%.01f°C", _TemperatureInCelsius.floatValue];
+        default:
+            return [NSString stringWithFormat:@"%.0f°F", _TemperatureInCelsius.floatValue * 9/5 + 32];
+    }
+}
+
+-(NSString*) getDefinedTemperatureString
+{
     if (_DefinedTemperatureInCelsius.doubleValue<=_MinTemperature.doubleValue)
         return NSLocalizedString(@"OFF", nil);
-
+    
     NSNumber *temperatureUnit = [[NSUserDefaults standardUserDefaults] valueForKey:@"temp"];
     switch (temperatureUnit.intValue) {
         case 0:

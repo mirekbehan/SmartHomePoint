@@ -31,7 +31,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    _uiDefinedTemperature.text = [_CurrentTemperature getDetailString];
+    _uiDefinedTemperature.text = [_CurrentTemperature getDefinedTemperatureString];
     _uiStepper.value = _CurrentTemperature.DefinedTemperatureInCelsius.doubleValue;
     _uiStepper.minimumValue = _CurrentTemperature.MinTemperature.doubleValue;
     _uiStepper.maximumValue = _CurrentTemperature.MaxTemperature.doubleValue;
@@ -48,7 +48,7 @@
 - (IBAction)StepperValueChanged:(id)sender
 {
     _CurrentTemperature.DefinedTemperatureInCelsius = [NSNumber numberWithDouble:((UIStepper*)sender).value];
-    _uiDefinedTemperature.text = [_CurrentTemperature getDetailString];
+    _uiDefinedTemperature.text = [_CurrentTemperature getDefinedTemperatureString];
 }
 
 

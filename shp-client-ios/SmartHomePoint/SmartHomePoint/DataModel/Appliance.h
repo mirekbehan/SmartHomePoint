@@ -19,6 +19,7 @@
 -(id)initWithName:(NSString*)name;
 
 -(NSString*) getDetailString;
+-(UIImage*) getDetailImage;
 -(BOOL) supportSwitch;
 
 @property (readonly) AppliancetType TypeOfAppliance;

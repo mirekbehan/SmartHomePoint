@@ -69,6 +69,7 @@
 		2993BF6817F5AB0700406F8E /* FilteredAppliancesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BF6717F5AB0700406F8E /* FilteredAppliancesTableViewController.m */; };
 		2993BF6A17F5BA2400406F8E /* shp_logo-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BF6917F5BA2400406F8E /* shp_logo-01.png */; };
 		2993BF6C17F5BA5400406F8E /* Bulb_Cell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2993BF6B17F5BA5400406F8E /* Bulb_Cell@2x.png */; };
+		2997BE4417FC66D400A9BE87 /* UserGridDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 2997BE4317FC66D400A9BE87 /* UserGridDataProvider.m */; };
 		29C74CA61795DDD80092708D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA51795DDD80092708D /* UIKit.framework */; };
 		29C74CA81795DDD80092708D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA71795DDD80092708D /* Foundation.framework */; };
 		29C74CAA1795DDD80092708D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA91795DDD80092708D /* CoreGraphics.framework */; };
@@ -219,6 +220,9 @@
 		2993BF6B17F5BA5400406F8E /* Bulb_Cell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Bulb_Cell@2x.png"; path = "Resources/Bulb_Cell@2x.png"; sourceTree = "<group>"; };
 		29978E3617F0627F00C2511C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = "en.lproj/SmartHomePoint-Info.plist"; sourceTree = "<group>"; };
 		29978E3817F0628600C2511C /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = cs; path = "cs.lproj/SmartHomePoint-Info.plist"; sourceTree = "<group>"; };
+		2997BE4117FC668700A9BE87 /* DataProviderProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DataProviderProtocol.h; path = DataModel/DataProviderProtocol.h; sourceTree = "<group>"; };
+		2997BE4217FC66D400A9BE87 /* UserGridDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserGridDataProvider.h; path = DataModel/UserGridDataProvider.h; sourceTree = "<group>"; };
+		2997BE4317FC66D400A9BE87 /* UserGridDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserGridDataProvider.m; path = DataModel/UserGridDataProvider.m; sourceTree = "<group>"; };
 		29C74CA21795DDD80092708D /* SmartHomePoint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHomePoint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29C74CA51795DDD80092708D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		29C74CA71795DDD80092708D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -466,6 +470,9 @@
 				2993BF0017F1C7B700406F8E /* Area.m */,
 				2993BEE417F1B00600406F8E /* DataManager.h */,
 				2993BEE517F1B00600406F8E /* DataManager.m */,
+				2997BE4117FC668700A9BE87 /* DataProviderProtocol.h */,
+				2997BE4217FC66D400A9BE87 /* UserGridDataProvider.h */,
+				2997BE4317FC66D400A9BE87 /* UserGridDataProvider.m */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -776,6 +783,7 @@
 				29853FA217ACFEBD00129662 /* SBJsonTokeniser.m in Sources */,
 				29853FA317ACFEBD00129662 /* SBJsonUTF8Stream.m in Sources */,
 				29853FA417ACFEBD00129662 /* SBJsonWriter.m in Sources */,
+				2997BE4417FC66D400A9BE87 /* UserGridDataProvider.m in Sources */,
 				29853FA517ACFEBD00129662 /* SSKeychain.m in Sources */,
 				29853FA617ACFEBD00129662 /* UGActivity.m in Sources */,
 				29853FA717ACFEBD00129662 /* UGClient.m in Sources */,

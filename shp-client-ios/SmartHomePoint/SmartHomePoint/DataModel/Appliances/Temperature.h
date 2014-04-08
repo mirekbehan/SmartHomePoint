@@ -10,9 +10,18 @@
 
 @interface Temperature : Appliance
 
-@property NSNumber* DefinedTemperatureInCelsius;
-@property (readonly) NSNumber* ActualTemperatureInCelsius; //!TODO
+typedef enum {
+    ttSensor, ttThermostat
+} ThermoType;
 
+
+@property NSNumber* DefinedTemperatureInCelsius;
+@property (readonly )NSNumber* TemperatureInCelsius;
 @property (readonly) NSNumber* MinTemperature;
 @property (readonly) NSNumber* MaxTemperature;
+
+@property (readonly) ThermoType TypeOfThermo;
+
+-(id)initWithName:(NSString*)name Type:(ThermoType)thermoType AndTemperatureInCelsius:(NSNumber*)temperatureInCelsius;
+-(NSString*) getDefinedTemperatureString;
 @end
