@@ -45,7 +45,7 @@
                     break;
                 for (Appliance* appliance in room.Appliances) {
                     if (appliance.TypeOfAppliance==aType) {
-                        [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:i]];
+                        [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:(int)i]];
                         found = true;
                         break;
                     }

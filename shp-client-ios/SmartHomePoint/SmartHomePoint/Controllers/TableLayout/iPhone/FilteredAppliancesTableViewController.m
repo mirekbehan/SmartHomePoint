@@ -45,7 +45,7 @@
             ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
             for (Appliance* appliance in _CurrentRoom.Appliances) {
                 if (appliance.TypeOfAppliance==aType) {
-                    [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:i]];
+                    [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:(int)i]];
                     break;
                 }
             }
@@ -279,7 +279,7 @@
         ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
         for (Appliance* appliance in _CurrentRoom.Appliances) {
             if (appliance.TypeOfAppliance==aType) {
-                [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:i]];
+                [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:(int)i]];
                 break;
             }
         }
