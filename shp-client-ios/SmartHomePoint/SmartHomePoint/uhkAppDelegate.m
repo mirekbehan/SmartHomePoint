@@ -19,7 +19,7 @@
     NSString *resetTokenKey = @"reset_token";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (defaults==NULL)
-        NSAssert(false, @"The settings does not exists!");
+        NSLog(@"The settings does not exists!");
     BOOL resetToken = (BOOL)[defaults valueForKey:resetTokenKey];
     if (resetToken)
         [defaults setObject:NO forKey:resetTokenKey];
@@ -38,7 +38,8 @@
             storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPad" bundle:nil];
         else
             storyBoard = [UIStoryboard storyboardWithName:@"SettingsStoryboard_iPhone" bundle:nil];
-        NSAssert(storyBoard!=NULL, @"storyboard is null");
+        if (storyBoard==NULL)
+            NSLog(@"storyboard is null");
         UIViewController * controller = [storyBoard instantiateInitialViewController];
         self.window.rootViewController = controller;
         [self.window addSubview:controller.view];
@@ -115,7 +116,8 @@
         }
     }
 
-    NSAssert(storyBoard!=NULL, @"The controller is null");
+    if (storyBoard==NULL)
+    NSLog(@"The controller is null");
     UIViewController * controller = [storyBoard instantiateInitialViewController];
 
     //!TODO

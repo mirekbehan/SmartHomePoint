@@ -186,7 +186,7 @@
 {
     if ([self getRegisteredApplianceTypeForIndex:3]==atUnimplemented ||
         [self getRegisteredApplianceTypeForIndex:4]!=atUnimplemented)
-        NSAssert(false, @"Bad count");
+        NSLog(@"Bad count");
     return 4;
 }
 

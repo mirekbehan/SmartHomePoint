@@ -10,7 +10,7 @@
 #import "Room.h"
 #import "TableLayoutMasterDetailProtocol.h"
 
-@interface FilteredAppliancesTableViewController : UITableViewController <UISplitViewControllerDelegate,TableLayoutMasterDetailProtocol>
+@interface FilteredAppliancesTableViewController : UITableViewController <TableLayoutMasterDetailProtocol>
 
 
 @end

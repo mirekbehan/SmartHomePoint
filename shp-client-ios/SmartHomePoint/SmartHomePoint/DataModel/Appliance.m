@@ -23,7 +23,7 @@
 
 -(NSString*) getDetailString
 {
-    NSAssert(false, @"Unimplemented getDetailString");
+    NSLog(@"Unimplemented getDetailString");
     return @"";
 }
 

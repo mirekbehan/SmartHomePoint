@@ -15,7 +15,7 @@
 
 -(id)initWithName:(NSString *)name
 {
-    NSAssert(false, @"never init only with name");
+    NSLog(@"never init only with name");
     return nil;
 }
 

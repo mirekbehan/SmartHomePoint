@@ -72,6 +72,13 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSIndexPath* p = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self tableView:self.tableView didSelectRowAtIndexPath:p];
+    self.navigationItem.title = @"";
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -135,22 +142,29 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id<TableLayoutMasterDetailProtocol> dvc = (FilteredAppliancesTableViewController*)self.splitViewController.delegate;
-    if (dvc==nil) {
-        NSAssert(false, @"TableLayoutMasterDetailProtocol is nill");
-        return;
+    id navigationCotroller = [self.splitViewController.viewControllers lastObject];
+    id detailViewController = [navigationCotroller topViewController];
+    if (! [detailViewController isKindOfClass:[FilteredAppliancesTableViewController class]])
+    {
+        [navigationCotroller popViewControllerAnimated:FALSE];
+        detailViewController = [navigationCotroller topViewController];
+        if (! [detailViewController isKindOfClass:[FilteredAppliancesTableViewController class]])
+        {
+            NSLog(@"no detail view controller");
+            return;
+        }
     }
     if (indexPath.section<_DataManager.Areas.count)
     {
         Area* area = [_DataManager.Areas objectAtIndex:indexPath.section];
         Room* room = [area.Rooms objectAtIndex:indexPath.row];
-        [dvc didSelectRoom:room];
+        [detailViewController didSelectRoom:room];
     }
     else
     {
         int idx = [[_CurrentTypesOfAppliances objectAtIndex:indexPath.row] intValue];
         ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
-        [dvc didSelectAppliance:aType];
+        [detailViewController didSelectAppliance:aType];
     }
 }
 

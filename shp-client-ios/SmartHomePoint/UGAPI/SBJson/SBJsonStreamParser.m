@@ -110,7 +110,7 @@
 		case sbjson_token_error:
 			break;
 	}
-	NSAssert(NO, @"Should not get here");
+	NSLog(@"Should not get here");
 	return @"<aaiiie!>";
 }
 

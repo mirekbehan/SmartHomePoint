@@ -74,10 +74,6 @@
     else
         self.navigationItem.title = [_DataManager getNameOfApplianceType:_CurrentApplianceType];
 
-    self.splitViewController.delegate = nil;
-    self.splitViewController.delegate = self;
-    [self.splitViewController willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
-
     [self.tableView reloadData];
 }
 
@@ -115,7 +111,7 @@
     if (_CurrentApplianceType == atUnimplemented) {
         int idx = [[_CurrentTypesOfAppliances objectAtIndex:section] intValue];
         if ([_DataManager getRegisteredApllianceTypesCount]<=idx) {
-            NSAssert(false, @"RegisteredApllianceTypesCount out of bounds");
+            NSLog(@"RegisteredApllianceTypesCount out of bounds");
             return 0;
         }
         NSInteger cnt = 0;
@@ -162,7 +158,7 @@
             CellIdentifier = @"louverCell";
             break;
         default:
-            NSAssert(false, @"Appliance detail unimplemented");
+            NSLog(@"Appliance detail unimplemented");
             break;
     }
     
@@ -263,19 +259,8 @@
         }
     }
 
-    NSAssert(false, @"Current appliance is nil");
+    NSLog(@"Current appliance is nil");
     return nil;
-}
-
-
-
-#pragma mark - UISplitViewControllerDelegate
-
-
-
-- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
-{
-    return NO;
 }
 
 
@@ -300,6 +285,7 @@
         }
     }
     
+    self.navigationItem.title = _CurrentRoom.Name;
     [self.tableView reloadData];
 }
 
@@ -320,6 +306,7 @@
         }
     }
     
+    self.navigationItem.title = [_DataManager getNameOfApplianceType:_CurrentApplianceType];
     [self.tableView reloadData];
 }
 

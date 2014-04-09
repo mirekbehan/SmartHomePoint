@@ -8,7 +8,7 @@
 
 #import "TableLayoutSplitViewController.h"
 
-@interface TableLayoutSplitViewController ()
+@interface TableLayoutSplitViewController () <UISplitViewControllerDelegate>
 
 @end
 
@@ -17,16 +17,22 @@
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
+    if (self)
+        self.delegate = self;
     return self;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
     return self;
+}
+
+
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
 }
 
 - (void)viewDidLoad
