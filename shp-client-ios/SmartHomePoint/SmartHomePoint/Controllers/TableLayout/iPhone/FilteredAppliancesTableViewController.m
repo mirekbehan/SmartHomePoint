@@ -10,40 +10,24 @@
 #import "uhkAppDelegate.h"
 #import "ApplianceDetailProtocol.h"
 
-@interface FilteredAppliancesTableViewController ()
+@interface FilteredAppliancesTableViewController () <UITableViewDelegate, UITableViewDataSource>
 @property DataManager* DataManager;
 
 //filter by room
 @property Room* CurrentRoom;
 @property NSMutableArray* CurrentTypesOfAppliances;
 //filter by appliance
-@property AppliancetType CurrentApplianceType;
+@property ApplianceType CurrentApplianceType;
 @property NSMutableArray* RoomsForView;
 @end
 
 @implementation FilteredAppliancesTableViewController
 
--(void)setRoom:(Room*)room
-{
-    if (_CurrentApplianceType!=atUnimplemented)
-        NSAssert(false, @"two filters defined");
-    _CurrentRoom = room;
-}
-
--(void)setApplianceType:(AppliancetType)type
-{
-    if (_CurrentRoom!=nil)
-        NSAssert(false, @"two filters defined");
-    _CurrentApplianceType = type;
-}
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        uhkAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
-        _DataManager = appDelegate.dataManager;
-        _CurrentApplianceType = atUnimplemented;
     }
     return self;
 }
@@ -51,11 +35,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    uhkAppDelegate* appDelegate = [[UIApplication sharedApplication] delegate];
+    _DataManager = appDelegate.dataManager;
     
     if (_CurrentApplianceType==atUnimplemented) {
         _CurrentTypesOfAppliances = [NSMutableArray array];
         for (NSInteger i=0; i<[_DataManager getRegisteredApllianceTypesCount]; i++) {
-            AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
+            ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
             for (Appliance* appliance in _CurrentRoom.Appliances) {
                 if (appliance.TypeOfAppliance==aType) {
                     [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:i]];
@@ -86,6 +73,11 @@
         self.navigationItem.title = _CurrentRoom.Name;
     else
         self.navigationItem.title = [_DataManager getNameOfApplianceType:_CurrentApplianceType];
+
+    self.splitViewController.delegate = nil;
+    self.splitViewController.delegate = self;
+    [self.splitViewController willRotateToInterfaceOrientation:self.interfaceOrientation duration:0];
+
     [self.tableView reloadData];
 }
 
@@ -110,7 +102,7 @@
         int idx = [[_CurrentTypesOfAppliances objectAtIndex:section] intValue];
         if ([_DataManager getRegisteredApllianceTypesCount]<=idx)
             return @"";
-        AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+        ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
         return [_DataManager getNameOfApplianceType:aType];
     }
     // filter by appliance type
@@ -127,7 +119,7 @@
             return 0;
         }
         NSInteger cnt = 0;
-        AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+        ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
         for (Appliance* appliance in _CurrentRoom.Appliances) {
             if (appliance.TypeOfAppliance == aType)
                 cnt++;
@@ -250,7 +242,7 @@
 {
     if (_CurrentApplianceType==atUnimplemented) {
         int idx = [[_CurrentTypesOfAppliances objectAtIndex:section] intValue];
-        AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+        ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
         NSInteger cnt = 0;
         for (Appliance* appliance in _CurrentRoom.Appliances) {
             if (appliance.TypeOfAppliance == aType) {
@@ -274,5 +266,62 @@
     NSAssert(false, @"Current appliance is nil");
     return nil;
 }
+
+
+
+#pragma mark - UISplitViewControllerDelegate
+
+
+
+- (BOOL)splitViewController:(UISplitViewController *)svc shouldHideViewController:(UIViewController *)vc inOrientation:(UIInterfaceOrientation)orientation
+{
+    return NO;
+}
+
+
+
+
+#pragma mark - TableLayoutMasterDetailProtocol
+
+
+-(void) didSelectRoom:(Room *) room
+{
+    _CurrentApplianceType=atUnimplemented;
+    _CurrentRoom = room;
+    
+    _CurrentTypesOfAppliances = [NSMutableArray array];
+    for (NSInteger i=0; i<[_DataManager getRegisteredApllianceTypesCount]; i++) {
+        ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
+        for (Appliance* appliance in _CurrentRoom.Appliances) {
+            if (appliance.TypeOfAppliance==aType) {
+                [_CurrentTypesOfAppliances addObject:[NSNumber numberWithInt:i]];
+                break;
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+}
+
+
+-(void) didSelectAppliance:(ApplianceType) typeOfAppliance
+{
+    _CurrentApplianceType=typeOfAppliance;
+    _CurrentRoom = nil;
+    _RoomsForView = [NSMutableArray array];
+    for (Area* area in _DataManager.Areas) {
+        for (Room* room in area.Rooms) {
+            for (Appliance* appliance in room.Appliances) {
+                if (appliance.TypeOfAppliance==_CurrentApplianceType) {
+                    [_RoomsForView addObject:room];
+                    break;
+                }
+            }
+        }
+    }
+    
+    [self.tableView reloadData];
+}
+
 
 @end

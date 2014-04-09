@@ -61,7 +61,7 @@
             l1.Color = [UIColor greenColor];
             [app addObject:l1];
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:23.4]];
-            t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:21.6];
+            t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:3.0];
             [app addObject:t1];
             Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
             [app addObject:lo1];
@@ -166,7 +166,7 @@
     return _AppliancesToDo;
 }
 
--(AppliancetType) getRegisteredApplianceTypeForIndex:(NSInteger)index
+-(ApplianceType) getRegisteredApplianceTypeForIndex:(NSInteger)index
 {
     switch (index) {
         case 0:
@@ -190,7 +190,7 @@
     return 4;
 }
 
--(NSString*) getNameOfApplianceType:(AppliancetType)type
+-(NSString*) getNameOfApplianceType:(ApplianceType)type
 {
     switch (type) {
         case atTemperature:

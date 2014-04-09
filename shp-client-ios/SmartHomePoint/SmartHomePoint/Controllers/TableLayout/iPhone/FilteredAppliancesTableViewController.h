@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Room.h"
+#import "TableLayoutMasterDetailProtocol.h"
 
-@interface FilteredAppliancesTableViewController : UITableViewController
+@interface FilteredAppliancesTableViewController : UITableViewController <UISplitViewControllerDelegate,TableLayoutMasterDetailProtocol>
 
--(void)setRoom:(Room*)room;
--(void)setApplianceType:(AppliancetType)type;
 
 @end

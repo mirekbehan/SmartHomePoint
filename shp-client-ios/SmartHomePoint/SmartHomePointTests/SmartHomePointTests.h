@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Jaroslav Kutnar @ University Hradec Kralove. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface SmartHomePointTests : SenTestCase
+@interface SmartHomePointTests : XCTestCase
 
 @end

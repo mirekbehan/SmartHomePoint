@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="vRn-UZ-LQU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="vRn-UZ-LQU">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Settings View Controller-->
@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2q-x5-2Rx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2q-x5-2Rx">
                                 <rect key="frame" x="171" y="548" width="100" height="30"/>
                                 <state key="normal" title="Scan QR code">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -26,19 +26,22 @@
                                     <action selector="onButtonTouchUp:" destination="vRn-UZ-LQU" eventType="touchUpInside" id="iJi-hh-YZv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-St-glb">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EFK-St-glb">
                                 <rect key="frame" x="179" y="275" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="rUA-KW-xpY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bR-nc-evo">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bR-nc-evo">
                                 <rect key="frame" x="179" y="313" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qum-BG-WcO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qum-BG-WcO">
                                 <rect key="frame" x="179" y="351" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
@@ -51,7 +54,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EFK-St-glb" firstAttribute="leading" secondItem="b0s-3e-zA5" secondAttribute="leading" constant="179" id="BeZ-i4-DII"/>
                             <constraint firstAttribute="bottom" secondItem="Z2q-x5-2Rx" secondAttribute="bottom" constant="446" id="BxB-hz-2W7"/>
+                            <constraint firstItem="EFK-St-glb" firstAttribute="trailing" secondItem="3bR-nc-evo" secondAttribute="trailing" id="FVU-kW-ain"/>
+                            <constraint firstItem="qum-BG-WcO" firstAttribute="leading" secondItem="3bR-nc-evo" secondAttribute="leading" id="RLl-cV-7hh"/>
+                            <constraint firstItem="qum-BG-WcO" firstAttribute="top" secondItem="3bR-nc-evo" secondAttribute="bottom" constant="8" symbolic="YES" id="YEM-vS-cHK"/>
+                            <constraint firstItem="3bR-nc-evo" firstAttribute="top" secondItem="EFK-St-glb" secondAttribute="bottom" constant="8" symbolic="YES" id="ivf-0c-GjS"/>
+                            <constraint firstItem="Z2q-x5-2Rx" firstAttribute="leading" secondItem="b0s-3e-zA5" secondAttribute="leading" constant="171" id="m6S-PI-EwB"/>
+                            <constraint firstItem="EFK-St-glb" firstAttribute="top" secondItem="GVy-ld-Xnq" secondAttribute="bottom" constant="255" id="uiH-iZ-Vcl"/>
+                            <constraint firstItem="EFK-St-glb" firstAttribute="leading" secondItem="3bR-nc-evo" secondAttribute="leading" id="ziH-8K-XLS"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -7,12 +7,12 @@
 //
 
 #import "UserGridDataProvider.h"
-#import "UGClient.h"
+//#import "UGClient.h"
 
 
 @interface UserGridDataProvider()
-@property UGClient *UsergridClient;
-@property UGUser *User;
+//@property UGClient *UsergridClient;
+//@property UGUser *User;
 @end
 
 
@@ -23,7 +23,7 @@
 {
     self = [super init];
     if (self) {
-        _UsergridClient = [[UGClient alloc]initWithOrganizationId: @"jku" withApplicationID: @"sandbox" baseURL:@"https://api.usergrid.com"];
+ /*       _UsergridClient = [[UGClient alloc]initWithOrganizationId: @"jku" withApplicationID: @"sandbox" baseURL:@"https://api.usergrid.com"];
         
         [_UsergridClient setLogging:true];
 
@@ -31,7 +31,7 @@
         if (_User.username)
             return self;
         else
-            return self;
+            return self;*/
     }
     return self;
 }

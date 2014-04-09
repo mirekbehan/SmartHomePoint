@@ -23,7 +23,7 @@
 -(void)setAppliancesForNextView:(NSArray*)appliances;
 -(NSArray*)getAppliancesForThisView;
 
--(AppliancetType) getRegisteredApplianceTypeForIndex:(NSInteger)index;
+-(ApplianceType) getRegisteredApplianceTypeForIndex:(NSInteger)index;
 -(NSInteger) getRegisteredApllianceTypesCount;
--(NSString*) getNameOfApplianceType:(AppliancetType)type;
+-(NSString*) getNameOfApplianceType:(ApplianceType)type;
 @end

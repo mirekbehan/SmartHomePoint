@@ -74,4 +74,14 @@
     }
 }
 
+-(UIImage*) getDetailImage
+{
+    if (_TypeOfThermo==ttSensor)
+        return nil;
+    if (_DefinedTemperatureInCelsius.doubleValue<=_MinTemperature.doubleValue)
+        return [UIImage imageNamed:@"Red_dot.png"];
+    return nil;
+}
+
+
 @end

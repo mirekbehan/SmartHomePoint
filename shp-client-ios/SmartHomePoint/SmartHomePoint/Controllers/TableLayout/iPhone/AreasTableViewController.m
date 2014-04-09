@@ -78,7 +78,7 @@
     
     UIViewController* controller = [segue destinationViewController];
     if ([controller isKindOfClass:[FilteredAppliancesTableViewController class]])
-        [((FilteredAppliancesTableViewController*)controller) setRoom:room];
+        [((FilteredAppliancesTableViewController*)controller) didSelectRoom:room];
 }
 
 

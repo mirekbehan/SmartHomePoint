@@ -35,7 +35,7 @@
 
     _CurrentTypesOfAppliances = [NSMutableArray array];
     for (NSInteger i=0; i<[_DataManager getRegisteredApllianceTypesCount]; i++) {
-        AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
+        ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:i];
         BOOL found = false;
         for (Area* area in _DataManager.Areas) {
             if (found)
@@ -79,7 +79,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     int idx = [[_CurrentTypesOfAppliances objectAtIndex:indexPath.row] intValue];
-    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
    
     static NSString *CellIdentifier = @"appCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -93,11 +93,11 @@
 {
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     int idx = [[_CurrentTypesOfAppliances objectAtIndex:indexPath.row] intValue];
-    AppliancetType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
+    ApplianceType aType = [_DataManager getRegisteredApplianceTypeForIndex:idx];
     
     UIViewController* controller = [segue destinationViewController];
     if ([controller isKindOfClass:[FilteredAppliancesTableViewController class]])
-        [((FilteredAppliancesTableViewController*)controller) setApplianceType:aType];
+        [((FilteredAppliancesTableViewController*)controller) didSelectAppliance:aType];
 }
 
 @end

@@ -1,5 +1,6 @@
 #import "UGHTTPClient.h"
 #import "UGHTTPResult.h"
+#import <objc/runtime.h>
 
 @interface UGHTTPClient ()
 @property (nonatomic, strong) NSMutableURLRequest *request;
@@ -58,7 +59,7 @@ static int activityCount = 0;
 	self.completionHandler = completionHandler;
     self.progressHandler = progressHandler;
 	self.connection = [[NSURLConnection alloc] initWithRequest:self.request delegate:self];
-    [isa retainNetworkActivityIndicator];
+    [object_getClass(self) retainNetworkActivityIndicator];
 }
 
 - (void) connectWithCompletionHandler:(UGHTTPCompletionHandler) completionHandler
@@ -101,7 +102,7 @@ static int activityCount = 0;
     }
 	self.connection = nil;
     self.data = nil;
-    [isa releaseNetworkActivityIndicator];
+    [object_getClass(self) releaseNetworkActivityIndicator];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -119,7 +120,7 @@ static int activityCount = 0;
     }
     self.connection = nil;
     self.data = nil;
-    [isa releaseNetworkActivityIndicator];
+    [object_getClass(self) releaseNetworkActivityIndicator];
 }
 
 - (void) cancel {

@@ -14,7 +14,7 @@
 
     typedef enum {
         atUnimplemented, atLight, atTemperature, atLouver, atIrrigation
-    } AppliancetType;
+    } ApplianceType;
 
 -(id)initWithName:(NSString*)name;
 
@@ -22,7 +22,7 @@
 -(UIImage*) getDetailImage;
 -(BOOL) supportSwitch;
 
-@property (readonly) AppliancetType TypeOfAppliance;
+@property (readonly) ApplianceType TypeOfAppliance;
 @property (readonly) NSString* Name;
 
 @end
