@@ -31,6 +31,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    _uiActualTemperature.text = [_CurrentTemperature getDetailString];
     _uiDefinedTemperature.text = [_CurrentTemperature getDefinedTemperatureString];
     _uiStepper.value = _CurrentTemperature.DefinedTemperatureInCelsius.doubleValue;
     _uiStepper.minimumValue = _CurrentTemperature.MinTemperature.doubleValue;

@@ -9,5 +9,32 @@
 #import "Camera.h"
 
 @implementation Camera
+@synthesize TypeOfAppliance = _TypeOfAppliance;
+
+
+-(id)initWithName:(NSString *)name
+{
+    self = [super initWithName:name];
+    if (self) {
+        _TypeOfAppliance = atCamera;
+    }
+    return self;
+}
+
+
+-(NSString*) getDetailString
+{
+    return @"";
+}
+
+-(UIImage*) getDetailImage
+{
+    return nil;
+}
+
+-(BOOL) supportSwitch
+{
+    return false;
+}
 
 @end

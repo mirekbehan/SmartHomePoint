@@ -14,3 +14,10 @@
 "ON" = "ON";
 "OFF" = "OFF";
 "All appliances" = "All appliances";
+"LouverUp" = "Up";
+"LouverDown" = "Down";
+"Locks" = "Locks";
+"Alarms" = "Alarms";
+"Cameras" = "Cameras";
+"Irrigate" = "Irrigate";
+"Stop" = "Stop";

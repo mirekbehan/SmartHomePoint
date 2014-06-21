@@ -7,8 +7,17 @@
 //
 
 #import "LouverDetailViewController.h"
+#import "Louver.h"
 
 @interface LouverDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *uiLabelUp;
+@property (weak, nonatomic) IBOutlet UILabel *uiLabelDown;
+@property (weak, nonatomic) IBOutlet UISlider *uiSlider;
+@property (weak, nonatomic) IBOutlet UILabel *uiLabelInProgress;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *uiProgress;
+
+@property Louver* CurrentLouver;
+@property NSTimer *Timer;
 
 @end
 
@@ -35,6 +44,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    _uiLabelUp.text = NSLocalizedString(@"LouverUp", nil);
+    _uiLabelDown.text = NSLocalizedString(@"LouverDown", nil);
+    [_uiSlider setValue:_CurrentLouver.HideRatioInPercent.floatValue];
+    _uiLabelInProgress.hidden = true;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    _CurrentLouver.HideRatioInPercent = [NSNumber numberWithFloat:_uiSlider.value];
+    _uiLabelInProgress.hidden = true;
+    [_uiProgress stopAnimating];
+    [_Timer invalidate];
+}
+
 /*
 #pragma mark - Navigation
 
@@ -45,5 +70,44 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (IBAction)onSliderValueChanged:(id)sender
+{
+    int sec = (_uiSlider.value-_CurrentLouver.HideRatioInPercent.floatValue)/10.0;
+    if (sec==0)
+        return;
+    _uiLabelInProgress.hidden = false;
+    [_uiProgress startAnimating];
+    if (_Timer)
+        return;
+    _Timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+
+}
+
+-(void)onTimer
+{
+    int current = _CurrentLouver.HideRatioInPercent.intValue;
+    int sec = (_uiSlider.value-current)/10.0;
+    if (sec == 0)
+    {
+        [_Timer invalidate];
+        _Timer = NULL;
+        _CurrentLouver.HideRatioInPercent = [NSNumber numberWithFloat:_uiSlider.value];
+        _uiLabelInProgress.hidden = true;
+        [_uiProgress stopAnimating];
+        return;
+    }
+    
+    _CurrentLouver.HideRatioInPercent = [NSNumber numberWithInt:current + (abs(sec)/sec*10)];
+}
+
+
+#pragma mark - ApplianceDetailProtocol
+
+-(void)setAppliance:(Appliance *)appliance
+{
+    _CurrentLouver = (Louver*)appliance;
+}
 
 @end

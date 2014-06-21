@@ -7,10 +7,14 @@
 //
 
 #import "CameraDetailViewController.h"
+#import "Camera.h"
+
 
 @interface CameraDetailViewController ()
-
+@property Camera* CurrentCamera;
 @end
+
+
 
 @implementation CameraDetailViewController
 
@@ -45,5 +49,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+#pragma mark - ApplianceDetailProtocol
+
+-(void)setAppliance:(Appliance *)appliance
+{
+    _CurrentCamera = (Camera*)appliance;
+}
+
 
 @end

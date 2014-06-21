@@ -9,5 +9,7 @@
 #import "Appliance.h"
 
 @interface Louver : Appliance
+@property NSNumber* HideRatioInPercent;
 
+-(id)initWithName:(NSString*)name AndHiddenRatio:(NSNumber*)hiddenRatio;
 @end

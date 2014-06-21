@@ -10,3 +10,6 @@
 #import "Temperature.h"
 #import "Louver.h"
 #import "Irrigation.h"
+#import "Lock.h"
+#import "Security.h"
+#import "Camera.h"

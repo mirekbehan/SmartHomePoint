@@ -7,8 +7,14 @@
 //
 
 #import "IrrigationDetailViewController.h"
+#import "Irrigation.h"
 
 @interface IrrigationDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *uiLabelMinutes;
+@property (weak, nonatomic) IBOutlet UIStepper *uiStepper;
+@property (weak, nonatomic) IBOutlet UIButton *uiButton;
+
+@property Irrigation* CurrentIrrigation;
 
 @end
 
@@ -35,15 +41,38 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)viewWillAppear:(BOOL)animated
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (_CurrentIrrigation.Irrigating)
+        _uiButton.titleLabel.text = NSLocalizedString(@"Stop", nil);
+    else
+        _uiButton.titleLabel.text = NSLocalizedString(@"Irrigate", nil);
+    _uiStepper.value = _CurrentIrrigation.IrrigateMinutes.intValue;
+    _uiLabelMinutes.text = [NSString stringWithFormat:@"%d mins.",(int)_uiStepper.value];
 }
-*/
+
+
+- (IBAction)onStepperValueChange:(id)sender
+{
+    _CurrentIrrigation.IrrigateMinutes = [NSNumber numberWithDouble:_uiStepper.value];
+    _uiLabelMinutes.text = [NSString stringWithFormat:@"%d mins.",_CurrentIrrigation.IrrigateMinutes.intValue];
+}
+
+- (IBAction)onIrrigate:(id)sender
+{
+    if (_CurrentIrrigation.Irrigating)
+        [_CurrentIrrigation stopIrrigating];
+    else
+        [_CurrentIrrigation startIrrigating];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - ApplianceDetailProtocol
+
+-(void)setAppliance:(Appliance *)appliance
+{
+    _CurrentIrrigation = (Irrigation*)appliance;
+}
+
 
 @end

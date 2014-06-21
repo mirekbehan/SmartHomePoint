@@ -9,5 +9,9 @@
 #import "Appliance.h"
 
 @interface Irrigation : Appliance
+@property NSNumber* IrrigateMinutes;
+@property BOOL Irrigating;
 
+-(void)startIrrigating;
+-(void)stopIrrigating;
 @end

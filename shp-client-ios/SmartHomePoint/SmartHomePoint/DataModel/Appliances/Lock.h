@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Appliance.h"
 
-@interface Lock : NSObject
+@interface Lock : Appliance
+
+@property BOOL Locked;
+
+-(id)initWithName:(NSString*)name AndState:(BOOL)locked;
 
 @end

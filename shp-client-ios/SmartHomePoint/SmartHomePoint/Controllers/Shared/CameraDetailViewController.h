@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplianceDetailProtocol.h"
 
-@interface CameraDetailViewController : UIViewController
+@interface CameraDetailViewController : UIViewController <ApplianceDetailProtocol>
 
 @end

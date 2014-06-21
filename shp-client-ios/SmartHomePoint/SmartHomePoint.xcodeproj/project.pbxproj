@@ -20,6 +20,12 @@
 		29836FBD179B2539005FA48C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29836FBC179B2539005FA48C /* Settings.bundle */; };
 		29853FB217ACFF8700129662 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29853FB117ACFF8700129662 /* Security.framework */; };
 		29853FBA17AD0C6300129662 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853FB917AD0C6300129662 /* ISColorWheel.m */; };
+		298E96EC195599160005E4F6 /* LouverDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E96EB195599160005E4F6 /* LouverDetailViewController.m */; };
+		298E96EF1955CF0F0005E4F6 /* Lock.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E96EE1955CF0F0005E4F6 /* Lock.m */; };
+		298E96F2195604FB0005E4F6 /* Security.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E96F1195604FB0005E4F6 /* Security.m */; };
+		298E96F51956050F0005E4F6 /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E96F41956050F0005E4F6 /* Camera.m */; };
+		298E96F819560BF60005E4F6 /* IrrigationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E96F719560BF60005E4F6 /* IrrigationDetailViewController.m */; };
+		298E96FB1956151F0005E4F6 /* CameraDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E96FA1956151F0005E4F6 /* CameraDetailViewController.m */; };
 		2993BEE617F1B00600406F8E /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEE517F1B00600406F8E /* DataManager.m */; };
 		2993BEED17F1B3A200406F8E /* Appliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEEC17F1B3A200406F8E /* Appliance.m */; };
 		2993BEF117F1B9FB00406F8E /* Light.m in Sources */ = {isa = PBXBuildFile; fileRef = 2993BEF017F1B9FB00406F8E /* Light.m */; };
@@ -52,6 +58,13 @@
 		29C74CCF1795DDD90092708D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29C74CA71795DDD80092708D /* Foundation.framework */; };
 		29C74CD71795DDD90092708D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29C74CD51795DDD90092708D /* InfoPlist.strings */; };
 		29C74CDA1795DDD90092708D /* SmartHomePointTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29C74CD91795DDD90092708D /* SmartHomePointTests.m */; };
+		29D9F837191663E30054AC73 /* Appliances@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F834191663E30054AC73 /* Appliances@2x.png */; };
+		29D9F838191663E30054AC73 /* Areas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F835191663E30054AC73 /* Areas@2x.png */; };
+		29D9F839191663E30054AC73 /* Overview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F836191663E30054AC73 /* Overview@2x.png */; };
+		29D9F83D191665470054AC73 /* 640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F83A191665470054AC73 /* 640x960.png */; };
+		29D9F83E191665470054AC73 /* 640x1136.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F83B191665470054AC73 /* 640x1136.png */; };
+		29D9F83F191665470054AC73 /* 1536x2048.png in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F83C191665470054AC73 /* 1536x2048.png */; };
+		29D9F841191665BC0054AC73 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29D9F840191665BC0054AC73 /* Media.xcassets */; };
 		29DDC32218F3D9C1009C6639 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 29DDC31C18F3D9C1009C6639 /* libzbar.a */; };
 		29DDC32318F3D9C1009C6639 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 29DDC31E18F3D9C1009C6639 /* zbar-back.png */; };
 		29DDC32418F3D9C1009C6639 /* zbar-help.html in Resources */ = {isa = PBXBuildFile; fileRef = 29DDC31F18F3D9C1009C6639 /* zbar-help.html */; };
@@ -111,6 +124,18 @@
 		29853FB117ACFF8700129662 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		29853FB817AD0C6300129662 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		29853FB917AD0C6300129662 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		298E96EA195599160005E4F6 /* LouverDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LouverDetailViewController.h; path = Controllers/Shared/LouverDetailViewController.h; sourceTree = "<group>"; };
+		298E96EB195599160005E4F6 /* LouverDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LouverDetailViewController.m; path = Controllers/Shared/LouverDetailViewController.m; sourceTree = "<group>"; };
+		298E96ED1955CF0F0005E4F6 /* Lock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lock.h; path = DataModel/Appliances/Lock.h; sourceTree = "<group>"; };
+		298E96EE1955CF0F0005E4F6 /* Lock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lock.m; path = DataModel/Appliances/Lock.m; sourceTree = "<group>"; };
+		298E96F0195604FB0005E4F6 /* Security.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Security.h; path = DataModel/Appliances/Security.h; sourceTree = "<group>"; };
+		298E96F1195604FB0005E4F6 /* Security.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Security.m; path = DataModel/Appliances/Security.m; sourceTree = "<group>"; };
+		298E96F31956050F0005E4F6 /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Camera.h; path = DataModel/Appliances/Camera.h; sourceTree = "<group>"; };
+		298E96F41956050F0005E4F6 /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Camera.m; path = DataModel/Appliances/Camera.m; sourceTree = "<group>"; };
+		298E96F619560BF60005E4F6 /* IrrigationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IrrigationDetailViewController.h; path = Controllers/Shared/IrrigationDetailViewController.h; sourceTree = "<group>"; };
+		298E96F719560BF60005E4F6 /* IrrigationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IrrigationDetailViewController.m; path = Controllers/Shared/IrrigationDetailViewController.m; sourceTree = "<group>"; };
+		298E96F91956151F0005E4F6 /* CameraDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraDetailViewController.h; path = Controllers/Shared/CameraDetailViewController.h; sourceTree = "<group>"; };
+		298E96FA1956151F0005E4F6 /* CameraDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraDetailViewController.m; path = Controllers/Shared/CameraDetailViewController.m; sourceTree = "<group>"; };
 		2993BEE417F1B00600406F8E /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataManager.h; path = DataModel/DataManager.h; sourceTree = "<group>"; };
 		2993BEE517F1B00600406F8E /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataManager.m; path = DataModel/DataManager.m; sourceTree = "<group>"; };
 		2993BEEB17F1B3A200406F8E /* Appliance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Appliance.h; path = DataModel/Appliance.h; sourceTree = "<group>"; };
@@ -168,6 +193,18 @@
 		29C74CD61795DDD90092708D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29C74CD81795DDD90092708D /* SmartHomePointTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartHomePointTests.h; sourceTree = "<group>"; };
 		29C74CD91795DDD90092708D /* SmartHomePointTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartHomePointTests.m; sourceTree = "<group>"; };
+		29D9F82F1916634A0054AC73 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		29D9F830191663690054AC73 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		29D9F831191663890054AC73 /* 1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1536x2048.png; sourceTree = "<group>"; };
+		29D9F832191663AE0054AC73 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = "<group>"; };
+		29D9F833191663C30054AC73 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
+		29D9F834191663E30054AC73 /* Appliances@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Appliances@2x.png"; sourceTree = "<group>"; };
+		29D9F835191663E30054AC73 /* Areas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Areas@2x.png"; sourceTree = "<group>"; };
+		29D9F836191663E30054AC73 /* Overview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overview@2x.png"; sourceTree = "<group>"; };
+		29D9F83A191665470054AC73 /* 640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640x960.png; sourceTree = "<group>"; };
+		29D9F83B191665470054AC73 /* 640x1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 640x1136.png; sourceTree = "<group>"; };
+		29D9F83C191665470054AC73 /* 1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1536x2048.png; sourceTree = "<group>"; };
+		29D9F840191665BC0054AC73 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		29DDC30818F3D9C1009C6639 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
 		29DDC30918F3D9C1009C6639 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
 		29DDC30A18F3D9C1009C6639 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
@@ -352,6 +389,12 @@
 				2993BF0317F1CED600406F8E /* Louver.m */,
 				2993BF0517F1CEE900406F8E /* Irrigation.h */,
 				2993BF0617F1CEE900406F8E /* Irrigation.m */,
+				298E96ED1955CF0F0005E4F6 /* Lock.h */,
+				298E96EE1955CF0F0005E4F6 /* Lock.m */,
+				298E96F0195604FB0005E4F6 /* Security.h */,
+				298E96F1195604FB0005E4F6 /* Security.m */,
+				298E96F31956050F0005E4F6 /* Camera.h */,
+				298E96F41956050F0005E4F6 /* Camera.m */,
 			);
 			name = Appliances;
 			sourceTree = "<group>";
@@ -359,10 +402,17 @@
 		2993BF0C17F58D3500406F8E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				29D9F83A191665470054AC73 /* 640x960.png */,
+				29D9F83B191665470054AC73 /* 640x1136.png */,
+				29D9F83C191665470054AC73 /* 1536x2048.png */,
+				29D9F834191663E30054AC73 /* Appliances@2x.png */,
+				29D9F835191663E30054AC73 /* Areas@2x.png */,
+				29D9F836191663E30054AC73 /* Overview@2x.png */,
 				2997BE4517FC765E00A9BE87 /* Red_dot.png */,
 				2993BF6B17F5BA5400406F8E /* Bulb_Cell@2x.png */,
 				2993BF6917F5BA2400406F8E /* shp_logo-01.png */,
 				2993BF0F17F58D6900406F8E /* Bulb_Off_Cell@2x.png */,
+				29D9F840191665BC0054AC73 /* Media.xcassets */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -392,6 +442,11 @@
 		29C74C991795DDD80092708D = {
 			isa = PBXGroup;
 			children = (
+				29D9F833191663C30054AC73 /* 152.png */,
+				29D9F832191663AE0054AC73 /* 120.png */,
+				29D9F831191663890054AC73 /* 1536x2048.png */,
+				29D9F830191663690054AC73 /* Default~iphone.png */,
+				29D9F82F1916634A0054AC73 /* Default.png */,
 				29853FB717AD0C6300129662 /* ISColorWheel */,
 				29DDC32718F3DA78009C6639 /* UGAPI */,
 				29DDC30418F3D9C1009C6639 /* ZBarSDK */,
@@ -632,6 +687,12 @@
 				29F94A1417EF82AE00BFEE9D /* LightDetailViewController.m */,
 				2993BF0917F46BB200406F8E /* TemperatureDetailViewController.h */,
 				2993BF0A17F46BB200406F8E /* TemperatureDetailViewController.m */,
+				298E96EA195599160005E4F6 /* LouverDetailViewController.h */,
+				298E96EB195599160005E4F6 /* LouverDetailViewController.m */,
+				298E96F619560BF60005E4F6 /* IrrigationDetailViewController.h */,
+				298E96F719560BF60005E4F6 /* IrrigationDetailViewController.m */,
+				298E96F91956151F0005E4F6 /* CameraDetailViewController.h */,
+				298E96FA1956151F0005E4F6 /* CameraDetailViewController.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -683,7 +744,7 @@
 			attributes = {
 				CLASSPREFIX = uhk;
 				LastTestingUpgradeCheck = 0510;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jaroslav Kutnar @ University Hradec Kralove";
 			};
 			buildConfigurationList = 29C74C9D1795DDD80092708D /* Build configuration list for PBXProject "SmartHomePoint" */;
@@ -715,18 +776,25 @@
 				29DDC32518F3D9C1009C6639 /* zbar-helpicons.png in Resources */,
 				29DDC32618F3D9C1009C6639 /* zbar-samples.png in Resources */,
 				29C74CB81795DDD80092708D /* Default.png in Resources */,
+				29D9F83E191665470054AC73 /* 640x1136.png in Resources */,
+				29D9F841191665BC0054AC73 /* Media.xcassets in Resources */,
 				29C74CBA1795DDD80092708D /* Default@2x.png in Resources */,
 				29C74CBC1795DDD80092708D /* Default-568h@2x.png in Resources */,
 				29DDC32318F3D9C1009C6639 /* zbar-back.png in Resources */,
 				29711A5717F6FDFF00B38CB7 /* SettingsStoryboard_iPad.storyboard in Resources */,
+				29D9F838191663E30054AC73 /* Areas@2x.png in Resources */,
 				29DDC32418F3D9C1009C6639 /* zbar-help.html in Resources */,
 				29711A5A17F6FDFF00B38CB7 /* TableLayoutStoryboard_iPhone.storyboard in Resources */,
 				29711A5917F6FDFF00B38CB7 /* TableLayoutStoryboard_iPad.storyboard in Resources */,
+				29D9F837191663E30054AC73 /* Appliances@2x.png in Resources */,
 				29836FBD179B2539005FA48C /* Settings.bundle in Resources */,
 				2993BF6C17F5BA5400406F8E /* Bulb_Cell@2x.png in Resources */,
+				29D9F83D191665470054AC73 /* 640x960.png in Resources */,
+				29D9F839191663E30054AC73 /* Overview@2x.png in Resources */,
 				2993BF6A17F5BA2400406F8E /* shp_logo-01.png in Resources */,
 				29F94A2017EF8A3300BFEE9D /* Localizable.strings in Resources */,
 				2993BF1017F58D6900406F8E /* Bulb_Off_Cell@2x.png in Resources */,
+				29D9F83F191665470054AC73 /* 1536x2048.png in Resources */,
 				29711A5817F6FDFF00B38CB7 /* SettingsStoryboard_iPhone.storyboard in Resources */,
 				2997BE4617FC765E00A9BE87 /* Red_dot.png in Resources */,
 			);
@@ -763,6 +831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298E96F819560BF60005E4F6 /* IrrigationDetailViewController.m in Sources */,
 				29DDC36418F3DA78009C6639 /* SBJsonStreamWriterState.m in Sources */,
 				29DDC36718F3DA78009C6639 /* SBJsonWriter.m in Sources */,
 				2993BEFE17F1C79B00406F8E /* Room.m in Sources */,
@@ -776,20 +845,25 @@
 				29DDC36818F3DA78009C6639 /* SSKeychain.m in Sources */,
 				29DDC36D18F3DA78009C6639 /* UGMultiStepAction.m in Sources */,
 				29DDC36018F3DA78009C6639 /* SBJsonStreamParserAdapter.m in Sources */,
+				298E96FB1956151F0005E4F6 /* CameraDetailViewController.m in Sources */,
 				2993BF0417F1CED600406F8E /* Louver.m in Sources */,
 				29836FB8179ABBA0005FA48C /* settingsViewController.m in Sources */,
 				29DDC35F18F3DA78009C6639 /* SBJsonStreamParserAccumulator.m in Sources */,
 				29DDC36318F3DA78009C6639 /* SBJsonStreamWriterAccumulator.m in Sources */,
 				29DDC36618F3DA78009C6639 /* SBJsonUTF8Stream.m in Sources */,
 				29DDC36218F3DA78009C6639 /* SBJsonStreamWriter.m in Sources */,
+				298E96EC195599160005E4F6 /* LouverDetailViewController.m in Sources */,
 				2993BEF117F1B9FB00406F8E /* Light.m in Sources */,
 				29DDC36B18F3DA78009C6639 /* UGClientResponse.m in Sources */,
 				2993BF0B17F46BB200406F8E /* TemperatureDetailViewController.m in Sources */,
 				29DDC36918F3DA78009C6639 /* UGActivity.m in Sources */,
 				29DDC36A18F3DA78009C6639 /* UGClient.m in Sources */,
 				2993BF5C17F5996A00406F8E /* AreasTableViewController.m in Sources */,
+				298E96EF1955CF0F0005E4F6 /* Lock.m in Sources */,
 				29DDC35C18F3DA78009C6639 /* NSObject+SBJson.m in Sources */,
+				298E96F51956050F0005E4F6 /* Camera.m in Sources */,
 				2993BF0117F1C7B700406F8E /* Area.m in Sources */,
+				298E96F2195604FB0005E4F6 /* Security.m in Sources */,
 				2993BEED17F1B3A200406F8E /* Appliance.m in Sources */,
 				2997BE4417FC66D400A9BE87 /* UserGridDataProvider.m in Sources */,
 				29DDC36C18F3DA78009C6639 /* UGHTTPManager.m in Sources */,
@@ -872,7 +946,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -910,7 +983,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -930,6 +1002,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/ZBarSDK\"",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

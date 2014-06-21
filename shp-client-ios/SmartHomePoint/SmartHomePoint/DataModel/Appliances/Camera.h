@@ -10,4 +10,5 @@
 
 @interface Camera : Appliance
 
+
 @end

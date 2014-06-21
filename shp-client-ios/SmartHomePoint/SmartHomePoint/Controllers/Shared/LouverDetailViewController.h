@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplianceDetailProtocol.h"
 
-@interface LouverDetailViewController : UIViewController
+@interface LouverDetailViewController : UIViewController <ApplianceDetailProtocol>
 
 @end

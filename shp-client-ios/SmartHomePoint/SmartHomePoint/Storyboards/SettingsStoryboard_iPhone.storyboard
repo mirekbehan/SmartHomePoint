@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PS6-qG-izU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PS6-qG-izU">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -17,6 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="gsJ-Xt-GRv">
+                                <rect key="frame" x="-6" y="-6" width="333" height="486"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4k-Ul-lGL">
                                 <rect key="frame" x="110" y="417" width="100" height="30"/>
                                 <state key="normal" title="Scan QR code">
@@ -72,16 +76,20 @@
                             <constraint firstItem="0dw-h8-xGg" firstAttribute="trailing" secondItem="4vI-Eu-GaZ" secondAttribute="trailing" id="4Qs-In-F2m"/>
                             <constraint firstItem="0dw-h8-xGg" firstAttribute="leading" secondItem="O4k-Ul-lGL" secondAttribute="leading" id="8tw-MJ-Vk2"/>
                             <constraint firstItem="0dw-h8-xGg" firstAttribute="top" secondItem="4vI-Eu-GaZ" secondAttribute="bottom" constant="8" symbolic="YES" id="KeP-Uj-x1f"/>
+                            <constraint firstAttribute="bottom" secondItem="gsJ-Xt-GRv" secondAttribute="bottom" id="N5z-00-Jbl"/>
                             <constraint firstItem="emB-Np-XuO" firstAttribute="top" secondItem="N1i-S7-0Ec" secondAttribute="bottom" constant="17" id="OHA-Yo-i8o"/>
                             <constraint firstItem="Eoa-XW-eWV" firstAttribute="top" secondItem="1t0-IM-Dkf" secondAttribute="bottom" constant="91" id="Pju-Kv-AT8"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="O4k-Ul-lGL" secondAttribute="bottom" constant="33" id="Qni-1F-qH4"/>
                             <constraint firstItem="N1i-S7-0Ec" firstAttribute="leading" secondItem="emB-Np-XuO" secondAttribute="leading" id="Wze-0z-1yD"/>
                             <constraint firstItem="0dw-h8-xGg" firstAttribute="leading" secondItem="4vI-Eu-GaZ" secondAttribute="leading" id="XII-MI-ljX"/>
+                            <constraint firstItem="gsJ-Xt-GRv" firstAttribute="centerX" secondItem="O4k-Ul-lGL" secondAttribute="centerX" id="atQ-qr-qu8"/>
                             <constraint firstItem="4vI-Eu-GaZ" firstAttribute="leading" secondItem="Eoa-XW-eWV" secondAttribute="leading" id="bMB-Qe-2wc"/>
+                            <constraint firstItem="gsJ-Xt-GRv" firstAttribute="top" secondItem="pBS-in-5WM" secondAttribute="top" constant="-6" id="dMt-LH-XgL"/>
                             <constraint firstAttribute="trailing" secondItem="Eoa-XW-eWV" secondAttribute="trailing" constant="20" symbolic="YES" id="fFF-SA-bTf"/>
                             <constraint firstAttribute="bottom" secondItem="O4k-Ul-lGL" secondAttribute="bottom" constant="33" id="fmZ-Hb-roE"/>
                             <constraint firstItem="N1i-S7-0Ec" firstAttribute="top" secondItem="1t0-IM-Dkf" secondAttribute="bottom" constant="95" id="g6j-XU-i10"/>
                             <constraint firstItem="O4k-Ul-lGL" firstAttribute="centerX" secondItem="pBS-in-5WM" secondAttribute="centerX" id="qRd-Yn-N8i"/>
+                            <constraint firstItem="gsJ-Xt-GRv" firstAttribute="leading" secondItem="pBS-in-5WM" secondAttribute="leading" constant="-6" id="sxa-4x-Y5S"/>
                             <constraint firstItem="N1i-S7-0Ec" firstAttribute="trailing" secondItem="emB-Np-XuO" secondAttribute="trailing" id="u2L-IE-3bS"/>
                             <constraint firstItem="N1i-S7-0Ec" firstAttribute="leading" secondItem="pBS-in-5WM" secondAttribute="leading" constant="20" symbolic="YES" id="w4H-Bd-M3f"/>
                         </constraints>
@@ -92,6 +100,9 @@
             <point key="canvasLocation" x="57" y="28"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="320" height="480"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

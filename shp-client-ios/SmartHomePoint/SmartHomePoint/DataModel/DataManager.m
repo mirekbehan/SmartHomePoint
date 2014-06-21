@@ -10,6 +10,7 @@
 #import "Area.h"
 #import "Room.h"
 #import "Appliance.h"
+#import "AppliancesInclude.h"
 
 @interface DataManager()
 @property NSArray* AppliancesToDo;
@@ -31,6 +32,30 @@
 -(void)retreiveAppliancesFromServer
 {
     NSMutableArray* areas = [NSMutableArray array];
+    //GENERAL
+    {
+        NSMutableArray* rooms = [NSMutableArray array];
+        {
+            NSMutableArray* app = [NSMutableArray array];
+            Lock* l1 = [[Lock alloc] initWithName:@"Main door" AndState:FALSE];
+            [app addObject:l1];
+            Security* s1 = [[Security alloc] initWithName:@"House alarm" AndState:FALSE];
+            [app addObject:s1];
+            [rooms addObject:[[Room alloc]initWithName:@"Inside" AndAppliances:[NSArray arrayWithArray:app]]];
+        }
+        {
+            NSMutableArray* app = [NSMutableArray array];
+            Lock* l1 = [[Lock alloc] initWithName:@"Main gate" AndState:TRUE];
+            [app addObject:l1];
+            Lock* l2 = [[Lock alloc] initWithName:@"Garage" AndState:FALSE];
+            [app addObject:l2];
+            Camera* c1 = [[Camera alloc] initWithName:@"Entrance"];
+            [app addObject:c1];
+            [rooms addObject:[[Room alloc]initWithName:@"Outside" AndAppliances:[NSArray arrayWithArray:app]]];
+        }
+        
+        [areas addObject:[[Area alloc] initWithName:@"General" AndRooms:[NSArray arrayWithArray:rooms]]];
+    }
     //FIRST FLOOR
     {
         NSMutableArray* rooms = [NSMutableArray array];
@@ -50,8 +75,12 @@
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:22.1]];
             t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:23.3];
             [app addObject:t1];
-            Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
+            Louver* lo1 = [[Louver alloc] initWithName:@"Louver south" AndHiddenRatio:[NSNumber numberWithInt:0]];
             [app addObject:lo1];
+            Louver* lo2 = [[Louver alloc] initWithName:@"Louver east 1" AndHiddenRatio:[NSNumber numberWithInt:50]];
+            [app addObject:lo2];
+            Louver* lo3 = [[Louver alloc] initWithName:@"Louver east 2" AndHiddenRatio:[NSNumber numberWithInt:100]];
+            [app addObject:lo3];
             [rooms addObject:[[Room alloc]initWithName:@"Kitchen" AndAppliances:[NSArray arrayWithArray:app]]];
         }
         {// WorkRoom
@@ -63,9 +92,9 @@
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:23.4]];
             t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:3.0];
             [app addObject:t1];
-            Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
-            [app addObject:lo1];
-            [rooms addObject:[[Room alloc]initWithName:@"WorkRoom" AndAppliances:[NSArray arrayWithArray:app]]];
+            //Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
+            //[app addObject:lo1];
+            [rooms addObject:[[Room alloc]initWithName:@"Workroom" AndAppliances:[NSArray arrayWithArray:app]]];
         }
         {// Bedroom
             NSMutableArray* app = [NSMutableArray array];
@@ -76,8 +105,8 @@
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:19.7]];
             t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:20.1];
             [app addObject:t1];
-            Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
-            [app addObject:lo1];
+            //Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
+            //[app addObject:lo1];
             [rooms addObject:[[Room alloc]initWithName:@"Bedroom" AndAppliances:[NSArray arrayWithArray:app]]];
         }
         {// BathRoom
@@ -89,8 +118,8 @@
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:22.7]];
             t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:23.8];
             [app addObject:t1];
-            Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
-            [app addObject:lo1];
+            //Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
+            //[app addObject:lo1];
             [rooms addObject:[[Room alloc]initWithName:@"Bathroom" AndAppliances:[NSArray arrayWithArray:app]]];
         }
         
@@ -108,8 +137,8 @@
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:21.5]];
             t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:21.5];
             [app addObject:t1];
-            Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
-            [app addObject:lo1];
+            //Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
+            //[app addObject:lo1];
             [rooms addObject:[[Room alloc]initWithName:@"Child room 1" AndAppliances:[NSArray arrayWithArray:app]]];
         }
         {// Child room 2
@@ -121,8 +150,8 @@
             Temperature* t1 = [[Temperature alloc] initWithName:@"Thermostat" Type:ttThermostat AndTemperatureInCelsius:[NSNumber numberWithFloat:16.5]];
             t1.DefinedTemperatureInCelsius = [NSNumber numberWithFloat:20.0];
             [app addObject:t1];
-            Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
-            [app addObject:lo1];
+            //Louver* lo1 = [[Louver alloc] initWithName:@"Louver"];
+            //[app addObject:lo1];
             [rooms addObject:[[Room alloc]initWithName:@"Child room 2" AndAppliances:[NSArray arrayWithArray:app]]];
         }
         
@@ -177,6 +206,12 @@
             return atLouver;
         case 3:
             return atIrrigation;
+        case 4:
+            return atDoorLock;
+        case 5:
+            return atSecurity;
+        case 6:
+            return atCamera;
         default:
             return atUnimplemented;
     }
@@ -184,10 +219,10 @@
 
 -(NSInteger) getRegisteredApllianceTypesCount
 {
-    if ([self getRegisteredApplianceTypeForIndex:3]==atUnimplemented ||
-        [self getRegisteredApplianceTypeForIndex:4]!=atUnimplemented)
+    if ([self getRegisteredApplianceTypeForIndex:6]==atUnimplemented ||
+        [self getRegisteredApplianceTypeForIndex:7]!=atUnimplemented)
         NSLog(@"Bad count");
-    return 4;
+    return 7;
 }
 
 -(NSString*) getNameOfApplianceType:(ApplianceType)type
@@ -201,6 +236,12 @@
             return NSLocalizedString(@"Louvers", nil);;
         case atIrrigation:
             return NSLocalizedString(@"Irrigation", nil);;
+        case atDoorLock:
+            return NSLocalizedString(@"Locks", nil);;
+        case atSecurity:
+            return NSLocalizedString(@"Alarms", nil);;
+        case atCamera:
+            return NSLocalizedString(@"Cameras", nil);;
         default:
             return @"";
     }

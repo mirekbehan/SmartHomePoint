@@ -155,7 +155,16 @@
             CellIdentifier = @"louverCell";
             break;
         case atIrrigation:
-            CellIdentifier = @"louverCell";
+            CellIdentifier = @"irrigationCell";
+            break;
+        case atDoorLock:
+            CellIdentifier = @"lightSimpleCell"; // same gui
+            break;
+        case atSecurity:
+            CellIdentifier = @"lightSimpleCell"; // same gui
+            break;
+        case atCamera:
+            CellIdentifier = @"cameraCell";
             break;
         default:
             NSLog(@"Appliance detail unimplemented");
@@ -197,6 +206,10 @@
                 case atLight:
                     if (((Light*)currentAppliance).TypeOfLight == ltSimple)
                         [simpleSwitch setOn:((Light*)currentAppliance).Enabled];
+                    break;
+                case atDoorLock:
+                    [simpleSwitch setOn:((Lock*)currentAppliance).Locked];
+                    break;
                 default:
                     break;
             }

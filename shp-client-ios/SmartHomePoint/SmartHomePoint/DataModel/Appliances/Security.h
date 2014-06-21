@@ -9,5 +9,8 @@
 #import "Appliance.h"
 
 @interface Security : Appliance
+@property BOOL Locked;
+
+-(id)initWithName:(NSString*)name AndState:(BOOL)locked;
 
 @end

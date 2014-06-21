@@ -13,7 +13,7 @@
 @interface Appliance : NSObject
 
     typedef enum {
-        atUnimplemented, atLight, atTemperature, atLouver, atIrrigation
+        atUnimplemented, atLight, atTemperature, atLouver, atIrrigation, atDoorLock, atSecurity, atCamera
     } ApplianceType;
 
 -(id)initWithName:(NSString*)name;

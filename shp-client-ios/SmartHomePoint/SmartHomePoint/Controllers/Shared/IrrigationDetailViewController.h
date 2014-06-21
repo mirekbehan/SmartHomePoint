@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ApplianceDetailProtocol.h"
 
-@interface IrrigationDetailViewController : UIViewController
+@interface IrrigationDetailViewController : UIViewController <ApplianceDetailProtocol>
 
 @end

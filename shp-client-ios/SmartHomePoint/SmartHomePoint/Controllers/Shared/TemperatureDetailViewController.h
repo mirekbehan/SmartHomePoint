@@ -10,6 +10,7 @@
 #import "ApplianceDetailProtocol.h"
 
 @interface TemperatureDetailViewController : UIViewController <ApplianceDetailProtocol>
+@property (weak, nonatomic) IBOutlet UILabel *uiActualTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *uiDefinedTemperature;
 - (IBAction)StepperValueChanged:(id)sender;
 @property (weak, nonatomic) IBOutlet UIStepper *uiStepper;
